@@ -1,5 +1,5 @@
 :root {
-  --primary: black;
+  --primary: white;
   --secondary: #0b0b45;
 }
 
@@ -65,43 +65,51 @@ li {
 .side-nav ul li {
   display: block;
   text-align: center;
-  font-size: 26px;
+  font-size: 32px;
   color: white;
   background-color: gray;
-  margin-top: 15px;
+  margin-top: 22px;
   padding: 3px 5px 3px 5px;
-  text-decoration: none;
 }
 /* Side Navigation END */
 
 
 /* Footer START */
 footer {
+  width: 100%;
   position: fixed;
   bottom: 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   color: white;
   background-color: #0b0b45;
-  padding-top: 30px;
-  padding-bottom: 20px;
-  font-size: 18px;
 }
 
-footer ul li {
-  margin-top: 5px;
-  color: white;
-  text-decoration: none;
-}
-
-.footer-menu {
+.footer {
+  width: 100%;
   display: flex;
-  gap: 1em;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  font-size: 20px;
 }
 
-.footer-menu ul {
-  margin-right: 30px;
-  margin-left: 30px;
+.footer ul {
+  margin-left: 36px;
+  color: white;
 }
+
+.footer ul li {
+  margin-top: 10px;
+}
+
+.footer-logo {
+  width: 65%;
+  padding-left: 30%;
+  margin-right: 36px;
+  font-size: 21px;
+}
+
+.footer-policy {
+  margin-left: 10px;
+  padding-bottom: 10px;
+}
+/* Footer END */
