@@ -115,6 +115,33 @@ input {
   border-radius: 10px;
   font-size: 26px;
 }
+
+.card-table {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.card {
+  width: 18%;
+}
+
+.card i {
+  font-size: 135px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  text-align: justify;
+  font-size: 18px;
+}
 /* Body of Homepage END */
 
 
