@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS submission;
 -- NOTE > USERS TABLE
 CREATE TABLE users (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR (30) NOT NULL,
+    username VARCHAR (30) UNIQUE NOT NULL,
     user_password VARCHAR (30) UNIQUE NOT NULL,
     user_email VARCHAR (30) UNIQUE NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -22,9 +22,9 @@ CREATE TABLE codelanguage (
 CREATE TABLE submission (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR (50) UNIQUE NOT NULL,
-    detail TEXT UNIQUE NOT NULL
+    detail VARCHAR (500) UNIQUE NOT NULL,
     language_id INTEGER NOT NULL,
-    username VARCHAR (30) NOT NULL,
+    username VARCHAR (30) UNIQUE NOT NULL,
     CONSTRAINT fk_codelanguage FOREIGN KEY (language_id) REFERENCES codelanguage(id) ON DELETE CASCADE,
     CONSTRAINT fk_users FOREIGN KEY (username) REFERENCES users(username) ON DELETE CASCADE
 );
