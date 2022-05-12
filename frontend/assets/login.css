@@ -1,0 +1,70 @@
+:root {
+  --primary: #0b0b45;
+  --secondary: #63666a;
+}
+
+.form-data {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.account {
+  width: 35%;
+  border: solid;
+  padding: 10px;
+  display: block;
+  position: relative;
+}
+
+.form-data h3 {
+  font-size: 26px;
+  padding-bottom: 10px;
+}
+
+form label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+form input {
+  border: 1px solid black;
+  display: block;
+  padding: 7px 15px;
+  font-size: 28px;
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+button {
+  width: 100%;
+  font-size: 26px;
+  color: white;
+  background-color: var(--primary);
+  padding: 5px;
+  border: none;
+}
+
+.icon-btn {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.facebook {
+  background-color: #4267b2;
+}
+
+.github {
+  background-color: #333;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
