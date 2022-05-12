@@ -62,3 +62,15 @@ VALUES
 (8,'HANDLEBARS-TIP-4', 'TIP DETAIL', 3),
 (8,'HANDLEBARS-TIP-5', 'TIP DETAIL', 4);
 
+-- SEEDS > MY SQL FUNCTIONS - ALL DEPARTMENTS
+SELECT codelanguage.name
+AS submission,
+submission.id,
+submission.title,
+submission.detail,
+submission.language_id,
+submission.username
+FROM submission
+LEFT JOIN codelanguage ON (codelanguage.id = submission.language_id)
+LEFT JOIN submission ON (submission.id = users.username)
+ORDER BY submission.title;
