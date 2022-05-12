@@ -69,8 +69,8 @@ submission.id,
 submission.title,
 submission.detail,
 submission.language_id,
-submission.username
+submission.user_tip
 FROM submission
 LEFT JOIN codelanguage ON (codelanguage.id = submission.language_id)
-LEFT JOIN submission ON (submission.id = users.username)
+LEFT JOIN submission ON (submission.id = users.user)
 ORDER BY submission.title;

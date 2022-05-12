@@ -24,7 +24,7 @@ CREATE TABLE submission (
     title VARCHAR (50) UNIQUE NOT NULL,
     detail VARCHAR (500) UNIQUE NOT NULL,
     language_id INTEGER NOT NULL,
-    username VARCHAR (30) UNIQUE NOT NULL,
+    user_tip VARCHAR (30) UNIQUE NOT NULL,
     CONSTRAINT fk_codelanguage FOREIGN KEY (language_id) REFERENCES codelanguage(id) ON DELETE CASCADE,
-    CONSTRAINT fk_users FOREIGN KEY (username) REFERENCES users(username) ON DELETE CASCADE
+    CONSTRAINT fk_users FOREIGN KEY (user_tip) REFERENCES users(username) ON DELETE CASCADE
 );
