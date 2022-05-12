@@ -18,7 +18,7 @@ Tips.init(
             allowNull: false
         },
         tip_detail: {
-            type: DataTypes.STRING(1000),
+            type: DataTypes.TEXT,
             allowNull: false
         },
         tip_language: {
