@@ -17,8 +17,13 @@
   },
   "homepage": "https://github.com/ballardingram/group-project2-codEZ#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-redis": "^6.1.3",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
     "path": "^0.12.7"
   },
   "devDependencies": {
