@@ -28,55 +28,57 @@
   <!-- LOGIN / SIGNUP FORMS -->
   <div class="form-data">
 
-    <div class="sign-up">
+    <div class="account">
       <h3>Sign Up</h3>
       <form>
-        <label for="username">Username * (Learn More)</label>
+        <label for="username">Username *</label>
         <input type="text" placeholder="Your Username Here" class="form-input">
 
         <label for="email">Email Address *</label>
         <input type="email" placeholder="Your Email Address" class="form-input">
 
-        <label for="password">Password * (Learn More)</label>
+        <label for="password">Password *</label>
         <input type="password" placeholder="Your Password Here" class="form-input">
-      
-        <div>
-          <a href="/" class="fa-brands fa-facebook">Sign up with Facebook</a>
-          <a href="/" class="fa-brands fa-github">Sign up with GitHub</a>
-        </div>
-
+        
         <p>
           Note: Your username will be associated with your submissions and seen publicly.
           <span class="checkbox-wrapper">
-            <input type="checkbox" id="validate" />
             <label for="checkbox">Agree to the Terms of Service</label>
+            <input type="checkbox" id="validate" />
           </span>
         </p>
-        <button type="submit">Create Account</button>
+        <button type="submit" class="submit">Create Account</button>
+
+        <p>or</p>
+        <button type="submit" class="icon-btn facebook"><i class="fa-brands fa-facebook"></i>    CONNECT WITH FACEBOOK</button>
+        <button type="submit" class="icon-btn github"><i class="fa-brands fa-github"></i>    CONNECT WITH GITHUB</button>
+
       </form>
     </div>
     
-    <div class="sign-in">
+    <div class="account">
       <h3>Log In</h3>
       <form>
-        <label for="username">Username * (Learn More)</label>
+        <label for="username">Username *</label>
         <input type="text" placeholder="Your Username Here" class="form-input">
 
         <label for="password">Password *</label>
         <input type="password" placeholder="Your Password Here" class="form-input">
       
-        <div>
-          <a href="/" class="fa-brands fa-facebook">Login with Facebook</a>
-          <a href="/" class="fa-brands fa-github">Login with GitHub</a>
-        </div>
-
         <p>
           <span class="checkbox-wrapper">
-            <input type="checkbox"/>
             <label for="checkbox">Remember Me</label>
+            <input type="checkbox"/>
           </span>
         </p>
-        <button type="submit">Login to Account</button>
+        <button type="submit" class="submit">Login to Account</button>
+
+        <p>or</p>
+        <button type="submit" class="icon-btn facebook"><i class="fa-brands fa-facebook"></i>    LOG IN WITH FACEBOOK</button>
+        <button type="submit" class="icon-btn github"><i class="fa-brands fa-github"></i>    LOG IN WITH GITHUB</button>
+  
+        
+        
       </form>
     </div>
 

@@ -1,3 +1,8 @@
+:root {
+  --primary: #0b0b45;
+  --secondary: #63666a;
+}
+
 .form-data {
   display: flex;
   align-items: center;
@@ -6,10 +11,12 @@
   margin-top: 100px;
 }
 
-.sign-up {
-  width: 40%;
+.account {
+  width: 35%;
   border: solid;
   padding: 10px;
+  display: block;
+  position: relative;
 }
 
 .form-data h3 {
@@ -32,8 +39,32 @@ form input {
   border-radius: 10px;
 }
 
-.sign-in {
-  width: 40%;
-  border: solid;
-  padding: 10px;
+button {
+  width: 100%;
+  font-size: 26px;
+  color: white;
+  background-color: var(--primary);
+  padding: 5px;
+  border: none;
+}
+
+.icon-btn {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.facebook {
+  background-color: #4267b2;
+}
+
+.github {
+  background-color: #333;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  flex-wrap: wrap;
 }
