@@ -1,0 +1,39 @@
+.form-data {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.sign-up {
+  width: 40%;
+  border: solid;
+  padding: 10px;
+}
+
+.form-data h3 {
+  font-size: 26px;
+  padding-bottom: 10px;
+}
+
+form label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+form input {
+  border: 1px solid black;
+  display: block;
+  padding: 7px 15px;
+  font-size: 28px;
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.sign-in {
+  width: 40%;
+  border: solid;
+  padding: 10px;
+}

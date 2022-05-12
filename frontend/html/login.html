@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital@0;1&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/10c0b6b763.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../assets/primary.css">
+  <link rel="stylesheet" href="../assets/login.css">
+
+  <title>{COD}EZ Login</title>
+</head>
+
+<body>
+
+  <!-- JUMBOTRON -->
+  <header class="top-nav">
+    <h1 class="logo">{COD}EZ.<span>community</span></h1>
+    <div class="menu">
+      <li><a href="./homepage.html" class="fa-solid fa-house"></a></li>
+      <li><a href="/" class="fa-solid fa-user"></a></li>
+    </div>
+  </header>
+
+  <!-- LOGIN / SIGNUP FORMS -->
+  <div class="form-data">
+
+    <div class="sign-up">
+      <h3>Sign Up</h3>
+      <form>
+        <label for="username">Username * (Learn More)</label>
+        <input type="text" placeholder="Your Username Here" class="form-input">
+
+        <label for="email">Email Address *</label>
+        <input type="email" placeholder="Your Email Address" class="form-input">
+
+        <label for="password">Password * (Learn More)</label>
+        <input type="password" placeholder="Your Password Here" class="form-input">
+      
+        <div>
+          <a href="/" class="fa-brands fa-facebook">Sign up with Facebook</a>
+          <a href="/" class="fa-brands fa-github">Sign up with GitHub</a>
+        </div>
+
+        <p>
+          Note: Your username will be associated with your submissions and seen publicly.
+          <span class="checkbox-wrapper">
+            <input type="checkbox" id="validate" />
+            <label for="checkbox">Agree to the Terms of Service</label>
+          </span>
+        </p>
+        <button type="submit">Create Account</button>
+      </form>
+    </div>
+    
+    <div class="sign-in">
+      <h3>Log In</h3>
+      <form>
+        <label for="username">Username * (Learn More)</label>
+        <input type="text" placeholder="Your Username Here" class="form-input">
+
+        <label for="password">Password *</label>
+        <input type="password" placeholder="Your Password Here" class="form-input">
+      
+        <div>
+          <a href="/" class="fa-brands fa-facebook">Login with Facebook</a>
+          <a href="/" class="fa-brands fa-github">Login with GitHub</a>
+        </div>
+
+        <p>
+          <span class="checkbox-wrapper">
+            <input type="checkbox"/>
+            <label for="checkbox">Remember Me</label>
+          </span>
+        </p>
+        <button type="submit">Login to Account</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-policy">
+      CodEZ.community 2022 - All Rights Reserved. Powered by Team VeggieTales | Privacy Policy | Terms of Use
+    </div>
+  </footer>
+  
+</body>
+
+</html>
