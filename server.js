@@ -12,14 +12,14 @@ const PORT = process.env.PORT || 3001;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/frontend'))
 
-app.use(session({
-  store: new RedisStore({
-    url: config.redisStore.url
-  }),
-  secret: config.redisStore.secret,
-  resave: false,
-  saveUninitialized: false
-}))
+// app.use(session({
+//   store: new RedisStore({
+//     url: process.env.redisStore.url
+//   }),
+//   secret: config.redisStore.secret,
+//   resave: false,
+//   saveUninitialized: false
+// }))
 app.use(passport.initialize())
 app.use(passport.session())
 
@@ -28,4 +28,4 @@ app.use((req, res) => {
   });
 
 app.use(routes);
-app.listen(PORT, () => console.log('Now listening'));
+app.listen(PORT, () => console.log(`Now listening on ${PORT}!`));
