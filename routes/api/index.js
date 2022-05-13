@@ -1,10 +1,13 @@
 // ROUTES > EXTERNAL ROUTES AND DEPENDENCIES
 const router = require('express').Router();
 const userRoutes = require('./user-routes');
+const tipsRoutes = require('./tips-routes');
 const {tips} = require("../../db/db.json");
 const { v4: uuidv4 } = require('uuid');
-router.use('/users', userRoutes);
 
+// ROUTERS
+router.use('/users', userRoutes);
+router.use('/tips', tipsRoutes);
 
 //ROUTES > GET ALL EXISTING TIPS
 router.get("/tips", (req, res) => {
