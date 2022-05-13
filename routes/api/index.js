@@ -2,10 +2,16 @@
 const router = require('express').Router();
 const userRoutes = require('./user-routes');
 const authRoutes = require('./authentication-routes');
+const tipsRoutes = require('./tips-routes');
+
 const {tips} = require("../../db/db.json");
 const { v4: uuidv4 } = require('uuid');
+
+// ROUTERS
 router.use('/users', userRoutes);
 router.use('/auth', authRoutes);
+router.use('/tips', tipsRoutes);
+
 
 //ROUTES > GET ALL EXISTING TIPS
 router.get("/tips", (req, res) => {
