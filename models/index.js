@@ -4,12 +4,12 @@ const Tips = require('./tips');
 
 // RELATION > USER TO TIPS - ONE TO MANY
 User.hasMany(Tips, {
-    foreignKey: 'user_id'
+    foreignKey: 'username'
 });
 
 // RELATION > TIP TO USER - ONE TO ONE
 Tips.belongsTo(User, {
-    foreignKey: 'user_id',
+    foreignKey: 'username',
 });
 
 module.exports = { User, Tips};

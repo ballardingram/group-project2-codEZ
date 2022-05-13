@@ -1,37 +1,23 @@
 const passport = require('passport')
 const bcrypt = require('bcrypt')
-const LocalStrategy = require('passport-local').Strategy
+const router = require('express').Router();
 
-const user = {
-    username: 'test-user',
-    passwordHash: 'bcrypt-hashed-password',
-    id: 1
-  }
+//http://localhost:3001/api/users/login
+router.post('/',
+    passport.authenticate('local'), (req,res) => { 
+        let validation_message = req['authInfo'].message; 
+          switch(validation_message){
+              case "USER_NOT_FOUND": 
+                res.json("No User found with provided user name");
+                break;
+              case "WRONG_CREDS" :
+                res.json("Credentials mismatch");
+                break;
+              case "SUCCESS":
+                  res.json(req['user']);
+          }
+        }
+   );
+
+   module.exports = router;
   
-  passport.use(new LocalStrategy(
-    (username, password, done) => {
-       findUser(username, (err, user) => {
-         if (err) {
-           return done(err)
-         }
-   
-         // User not found
-         if (!user) {
-           return done(null, false)
-         }
-   
-         // Always use hashed passwords and fixed time comparison
-         bcrypt.compare(password, user.passwordHash, (err, isValid) => {
-           if (err) {
-             return done(err)
-           }
-           if (!isValid) {
-             return done(null, false)
-           }
-           return done(null, user)
-         })
-       })
-     }
-   ))
-
-   
