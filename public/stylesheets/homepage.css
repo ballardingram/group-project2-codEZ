@@ -135,22 +135,7 @@ body {
   background-color: var(--electricBlue);
 }
 
-#account-form {
-  margin-top: 80px;
+#form-container {
+  margin-top: 35px;
 }
 
-#login-form {
-  width: 35%;
-}
-
-@media screen and (max-width: 1100px) {
-  #login-form {
-    width: 60%;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  #login-form {
-    width: 90%;
-  }
-}
