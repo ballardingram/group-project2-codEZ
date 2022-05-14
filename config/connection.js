@@ -10,9 +10,7 @@ const sequelize = new Sequelize(
     {
         host: 'localhost',
         dialect: 'mysql',
-        dialectOptions: {
-            decimalNumbers: true,
-          },
+        storage: "./session.mysql",
     }
 );
 module.exports = sequelize;

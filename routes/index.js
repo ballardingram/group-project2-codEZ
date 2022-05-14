@@ -3,7 +3,11 @@ const apiRoutes = require('./api');
 var path = require('path');
 
 router.use('/api', apiRoutes);
-
+router.get('/login', (req,res) => {
+  console.log("sending login form");
+  res.sendFile(path.join(__dirname, '../public/html', 'login.html'));
+  
+});
 router.get('/authSuccess', (req,res) => {
   console.log('we are here as well : '+Date.now());
   res.json("user authenticated good");

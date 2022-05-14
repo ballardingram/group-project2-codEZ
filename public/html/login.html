@@ -58,12 +58,12 @@
     
     <div class="account">
       <h3>Log In</h3>
-      <form>
+      <form action="/api/auth" method="post" enctype="application/x-www-form-urlencoded">
         <label for="username">Username *</label>
-        <input type="text" placeholder="Your Username Here" class="form-input">
+        <input type="text" name="username" placeholder="Your Username Here" class="form-input">
 
         <label for="password">Password *</label>
-        <input type="password" placeholder="Your Password Here" class="form-input">
+        <input type="password" name="password" placeholder="Your Password Here" class="form-input">
       
         <p>
           <span class="checkbox-wrapper">
