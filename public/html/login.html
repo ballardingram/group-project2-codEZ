@@ -4,77 +4,170 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital@0;1&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Gruppo&family=Monoton&family=Roboto:wght@500&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/10c0b6b763.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../stylesheets/primary.css">
-  <link rel="stylesheet" href="../stylesheets/login.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+  <link rel="stylesheet" href="../stylesheets/homepage.css">
   <title>{COD}EZ Login</title>
 </head>
 
 <body>
-
-  <!-- JUMBOTRON -->
-  <header class="top-nav">
-    <h1 class="logo">{COD}EZ.<span>community</span></h1>
-    <div class="menu">
-      <li><a href="./homepage.html" class="fa-solid fa-house"></a></li>
-      <li><a href="/" class="fa-solid fa-user"></a></li>
-    </div>
-  </header>
-
-  <!-- LOGIN / SIGNUP FORMS -->
-  <div class="form-data">
-    <div class="container">
-
-      <h3>Create an Account</h3>
-      <div class="account">
-        <form>
-          <label for="username">Username *</label>
-          <input type="text" placeholder="Create Username Here" class="form-input">
-
-          <label for="email">Email Address *</label>
-          <input type="email" placeholder="Your Email Address" class="form-input">
-
-          <label for="password">Password *</label>
-          <input type="password" placeholder="Your Password Here" class="form-input">
-
-          <button type="submit" class="submit">Create Account</button>
-
-          <div class="connect-icons">
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-github"></i>
+    <!-- Navigation -->
+    <nav class="navbar sticky-top navbar-expand-md navbar-light bg-light">
+      <h1 class="navbar-brand"> <span class="logo-1">{</span>COD<span class="logo-1">}</span>EZ<span class="logo-2"> .community</span></h1>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav ml-auto wrappers">
+          <div class="nav-item active icon home">
+            <div class="tooltips">HOME</div>
+            <a class="nav-link" href="./homepage.html"><span><i class="fa-solid fa-house"></i></span></a>
           </div>
+          <div class="nav-item active icon user">
+            <div class="tooltips">LOGIN</div>
+            <a class="nav-link" href="./login.html"><span><i class="fa-solid fa-user"></i></span></a>
+          </div>
+        </div>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn my-2 my-sm-0" id="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
       </div>
-    
-      <h3>Log In</h3>
-      <div class="account">
-        <form>
-          <label for="username">Username *</label>
-          <input type="text" placeholder="Your Username Here" class="form-input">
+    </nav>
 
-          <label for="password">Password *</label>
-          <input type="password" placeholder="Your Password Here" class="form-input">
+<!-- Login Form -->
+<div class="container-fluid" id="account-form">
+  <div class="d-flex justify-content-center">
+    <div id="login-form">
+      <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link active" id="tab-login" data-mdb-toggle="pill" href="#pills-login" role="tab"
+            aria-controls="pills-login" aria-selected="true">Login</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="tab-register" data-mdb-toggle="pill" href="#pills-register" role="tab"
+            aria-controls="pills-register" aria-selected="false">Register</a>
+        </li>
+      </ul>
       
-          <button type="submit" class="submit" id="small-card">Login to Account</button>
-
-          <button type="submit" class="icon-btn facebook"><i class="fa-brands fa-facebook"></i>    LOG IN WITH FACEBOOK</button>
-          <button type="submit" class="icon-btn github"><i class="fa-brands fa-github"></i>    LOG IN WITH GITHUB</button>
-        </form>
-      </div>
+      <div class="tab-content">
+        <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+          <form>
+            <div class="text-center mb-3">
+              <p>Sign in with:</p>
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-facebook-f"></i>
+              </button>
+      
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-google"></i>
+              </button>
+      
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-github"></i>
+              </button>
+            </div>
+      
+            <p class="text-center">or:</p>
+      
+            <div class="form-outline mb-4">
+              <input type="email" id="loginName" class="form-control" />
+              <label class="form-label" for="loginName">Email or username</label>
+            </div>
+      
+            <div class="form-outline mb-4">
+              <input type="password" id="loginPassword" class="form-control" />
+              <label class="form-label" for="loginPassword">Password</label>
+            </div>
+      
+            <div class="row mb-4">
+              <div class="col-md-6 d-flex justify-content-center">
+                <div class="form-check mb-3 mb-md-0">
+                  <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked />
+                  <label class="form-check-label" for="loginCheck"> Remember me </label>
+                </div>
+              </div>
+      
+              <div class="col-md-6 d-flex justify-content-center">
+                <a href="#!">Forgot password?</a>
+              </div>
+            </div>
+      
+            <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+      
+            <div class="text-center">
+              <p>Not a member? <a href="#!">Register</a></p>
+            </div>
+          </form>
+        </div>
+        <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
+          <form>
+            <div class="text-center mb-3">
+              <p>Sign up with:</p>
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-facebook-f"></i>
+              </button>
+      
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-google"></i>
+              </button>
+      
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-twitter"></i>
+              </button>
+      
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <i class="fab fa-github"></i>
+              </button>
+            </div>
+      
+            <p class="text-center">or:</p>
+      
+            <div class="form-outline mb-4">
+              <input type="text" id="registerName" class="form-control" />
+              <label class="form-label" for="registerName">Name</label>
+            </div>
+      
+            <div class="form-outline mb-4">
+              <input type="text" id="registerUsername" class="form-control" />
+              <label class="form-label" for="registerUsername">Username</label>
+            </div>
+      
+            <div class="form-outline mb-4">
+              <input type="email" id="registerEmail" class="form-control" />
+              <label class="form-label" for="registerEmail">Email</label>
+            </div>
+      
+            <div class="form-outline mb-4">
+              <input type="password" id="registerPassword" class="form-control" />
+              <label class="form-label" for="registerPassword">Password</label>
+            </div>
+      
+            <div class="form-outline mb-4">
+              <input type="password" id="registerRepeatPassword" class="form-control" />
+              <label class="form-label" for="registerRepeatPassword">Repeat password</label>
+            </div>
+      
+            <div class="form-check d-flex justify-content-center mb-4">
+              <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" checked
+                aria-describedby="registerCheckHelpText" />
+              <label class="form-check-label" for="registerCheck">
+                I have read and agree to the terms
+              </label>
+            </div>
+      
+            <button type="submit" class="btn btn-primary btn-block mb-3">Sign in</button>
+          </form>
+        </div>
+    </div>
+    
     </div>
   </div>
+</div>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-policy">
-      CodEZ.community 2022 - All Rights Reserved. Powered by Team VeggieTales | Privacy Policy | Terms of Use
-    </div>
-  </footer>
-  
 </body>
-
 </html>
