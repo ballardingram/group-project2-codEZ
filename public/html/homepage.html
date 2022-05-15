@@ -40,20 +40,28 @@
   </nav>
 
   <div class="container-fluid">
-    <button type="button" class="btn btn-primary w-100" id="tip-form">Have an awesome tip you'd like to submit? Click here!</button>
+    <div class="row">
+      <div class="col-lg-3 col-md-4">
+        <button type="button" class="btn btn-primary w-100" id="tip-form">Submit a tip here!</button>
+      </div>
+    </div>
   </div>
 
-  <div class="container-fluid">
-    <h2>Recent Submissions</h2>
+  <div class="container-fluid" id="filter-container">
+    <div class="row">
+      <div class="col-lg-4 col-md-5">
+        <h3 class="w-100">Displaying: Most Recent</h3>
+      </div>
+    </div>
   </div>
  
   <div class="container-fluid">
     <div class="row justify-content-around">
       <div class="col-sm-11">
         <div class="card mb-3">
-          <h5 class="card-header"></h5>
+          <h5 class="card-header"><i class="fa-brands fa-html5 fa-fw"></i>HTML5</h5>
           <div class="card-body">
-            <h5 class="card-title"><i class="fa-brands fa-html5 fa-fw"></i> HTML5 Example Tip Submission</h5>
+            <h5 class="card-title"> Example Tip Submission</h5>
             <p class="card-text">TIP SUBMISSION PREVIEW TEXT Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
               ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
               laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.</p>
@@ -63,33 +71,21 @@
       </div>
       <div class="col-sm-11">
         <div class="card mb-3">
-          <h5 class="card-header"><i class="fa-brands fa-css3 fa-fw"></i></h5>
+          <h5 class="card-header"><i class="fa-brands fa-css3 fa-fw"></i>CSS3</h5>
           <div class="card-body">
-            <h5 class="card-title">CSS3 Example Tip Submission</h5>
+            <h5 class="card-title">Example Tip Submission</h5>
             <p class="card-text">TIP SUBMISSION PREVIEW TEXT Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
               ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
               laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.</p>
-            <a href="#" class="btn btn-primary">View More</a>
+              <a href="/">View More</a>
           </div>
         </div>
       </div>
       <div class="col-sm-11">
         <div class="card mb-3">
-          <h5 class="card-header"></h5>
+          <h5 class="card-header"><i class="fa-brands fa-js-square fa-fw"></i>JAVASCRIPT</h5>
           <div class="card-body">
-            <h5 class="card-title"><i class="fa-brands fa-js-square fa-fw"></i> JAVASCRIPT Example Tip Submission</h5>
-            <p class="card-text">TIP SUBMISSION PREVIEW TEXT Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-              ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.</p>
-            <a href="/">View More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-11">
-        <div class="card mb-3">
-          <h5 class="card-header"></h5>
-          <div class="card-body">
-            <h5 class="card-title"><i class="fa-brands fa-node-js fa-fw"></i> NODEJS Example Tip Submission</h5>
+            <h5 class="card-title">Example Tip Submission</h5>
             <p class="card-text">TIP SUBMISSION PREVIEW TEXT Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
               ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
               laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.</p>
@@ -99,9 +95,21 @@
       </div>
       <div class="col-sm-11">
         <div class="card mb-3">
-          <h5 class="card-header"></h5>
+          <h5 class="card-header"><i class="fa-brands fa-node-js fa-fw"></i>NODE JS</h5>
           <div class="card-body">
-            <h5 class="card-title"><i class="fa-brands fa-css3-alt fa-fw"></i> CSS3 Example Tip Submission</h5>
+            <h5 class="card-title">Example Tip Submission</h5>
+            <p class="card-text">TIP SUBMISSION PREVIEW TEXT Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+              ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.</p>
+            <a href="/">View More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-11">
+        <div class="card mb-3">
+          <h5 class="card-header"><i class="fa-brands fa-css3-alt fa-fw"></i>CSS3</h5>
+          <div class="card-body">
+            <h5 class="card-title">Example Tip Submission</h5>
             <p class="card-text">TIP SUBMISSION PREVIEW TEXT Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
               ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
               laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.</p>
@@ -130,31 +138,15 @@
   </div> -->
 
   <!-- FOOTER -->
-  <footer>
-      <div class="footer-menu">
-        <ul>
-          <li><a href="/"></a>About</li>
-          <li><a href="./privacy-policy.html"></a>Privacy Policy</li>
-          <li><a href="./terms-of-service.html"></a>Terms of Service</li>
-          <li><a href="./login.html"></a>Sign-up / Login</li>
-          <li><a href="/"></a>My Account</li>
-          <li><a href="/"></a>View 'My Tips'</li>
-          <li><a href="/"></a>News</li>
-          <li><a href="/"></a>Submit a Tip</li>
-          <li>&copy2022 TeamVeggie</li>
-        </ul>
+  <div class="container mt-5">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-bottom row justify-content-center">
+      <div class="navbar-nav text-center">
+        <a class="nav-item nav-link" href="./privacy-policy.html">Privacy Policy<span class="sr-only">(Privacy Policy)</span></a>
+        <a class="nav-item nav-link" href="./terms-of-service.html">Terms of Use<span class="sr-only">(Terms of Use)</span></a>
+        <a class="nav-item nav-link" href="./homepage.html">&copy2022 TeamVeggie<span class="sr-only">(Home Page)</a>
       </div>
-      <div class="footer-logo">
-        <h1>{COD}EZ.<span>community</span></h1>
-        <p>CodEZ.community is your resource for expert advice from people that have the best to offer. 
-          Only the best of the best can be found here. This, of course, is decided by you the user.</p>
-      </div>
-    </div>
-    <div class="footer-policy">
-      CodEZ.community 2022 - All Rights Reserved. Powered by Team VeggieDelight | Privacy Policy | Terms of Use
-    </div>
-    
-  </footer>
+    </nav>
+  </div>
 
   <!-- MODAL? -->
 
