@@ -1,0 +1,36 @@
+{
+  "name": "group-project2-codez",
+  "version": "1.0.0",
+  "description": "A place to share the best of the best tips by best of one's knowledge",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ballardingram/group-project2-codEZ.git"
+  },
+  "author": "Ballard, Cassandra, Ramu, Shuan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ballardingram/group-project2-codEZ/issues"
+  },
+  "homepage": "https://github.com/ballardingram/group-project2-codEZ#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "connect-redis": "^6.1.3",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "mysql2": "^2.3.3",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "sequelize": "^6.19.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
