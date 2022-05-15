@@ -15,16 +15,17 @@ passport.use('local', new LocalStrategy(
           }
       }).then(async(dbuser) => {
           if (!dbuser) {
-              return cb(null, true, { message: 'USER_NOT_FOUND' });
+            console.log('no user found');
+              return cb(null, false, { message: 'USER_NOT_FOUND' });
           }
-         
           if (username ==dbuser['username'] && await bcrypt.compare(password, dbuser['password'])) {
+            console.log('User authenticated');
               let user = dbuser['dataValues'];
               user['password'] = undefined;
-              // req.login(user);
               return cb(null, user);
           }
           else {
+            console.log('wrong credentials');
               return cb(null, false, {message: "WRONG_CREDS"});
           }
       }).catch(err => {
@@ -34,16 +35,17 @@ passport.use('local', new LocalStrategy(
 );
 
 passport.serializeUser(function (user, done) {
-  console.log('we came to store a session');
+  console.log('we came to store a session : '+user);
   process.nextTick(function() {
-  done(null, user);
+      done(null, user);
   });
 });
 
 passport.deserializeUser(function (user, done) {
-  process.nextTick(function() {
-  done(null, user);
-  });
+  console.log('we came to retrieve a session : '+user);
+      process.nextTick(function() {
+        done(null, user);
+      });
 });
 
 
@@ -51,20 +53,21 @@ passport.deserializeUser(function (user, done) {
 
 
 router.post('/', passport.authenticate('local', {
-  successReturnToOrRedirect: '/',
+  successReturnToOrRedirect: '/userhome',
   failureRedirect: '/login',
   failureMessage: true
 }) );
 
 
-/* POST /logout
- *
- * This route logs the user out.
- */
-router.post('/logout', function(req, res, next) {
-  req.logout();
-  res.redirect('/');
-});
 
-   module.exports = router;
+
+module.exports = router;
   
+
+
+   /**
+    * Implement temporary sessions
+    * Implement logout
+    * limit passport middleware to my tips/my accounts page
+    * 
+    */

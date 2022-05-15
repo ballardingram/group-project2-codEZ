@@ -28,10 +28,20 @@ app.use(cookieParser());
 
 app.use(session({
   genid: function(req) { return uuidv4()},
-  secret: 'keyboard cat',
+  secret: 'thisisforproject2',
   resave: false, // don't save session if unmodified
   saveUninitialized: false, // don't create session until something stored
-}));
+  store: new SequelizeStore({
+    db: sequelize,
+    checkExpirationInterval: 15 * 60 * 1000, // The interval at which to cleanup expired sessions in milliseconds.
+    expiration: 30 * 60 * 1000  // The maximum age (in milliseconds) of a valid session.
+      }),
+      cookie: {
+        maxAge: 30 * 60 * 1000, //30 minutes
+        sameSite: true
+      }
+  }),
+);
 
 // app.use(passport.initialize());
 app.use(passport.authenticate('session'));
@@ -45,15 +55,6 @@ app.use(function(req, res, next) {
 
 
 app.use(routes);
-
-
-
-
-
-app.use((req, res) => {
-    res.sendFile(__dirname+'/public/html/homepage.html');
-  });
-
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
