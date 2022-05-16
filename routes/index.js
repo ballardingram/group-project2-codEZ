@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const passport = require('passport')
 const apiRoutes = require('./api');
 var path = require('path');
 
@@ -22,9 +21,19 @@ router.get('/login', (req,res) => {
  */
 router.get('/logout', function(req, res, next) {
   console.log('logging out user');
-  req.logout();
-  console.log('logging out user');
-  res.redirect('/');
+  if (req.session) {
+    // delete session object
+    req.session.destroy(function(err) {
+        if(err) {
+            return next(err);
+        } else {
+            req.session = null;
+            console.log("logout successful");
+            return res.redirect('/');
+        }
+    });
+}  
+    
 });
 
 router.get('/userhome', checkAuthentication,  (req,res) => {

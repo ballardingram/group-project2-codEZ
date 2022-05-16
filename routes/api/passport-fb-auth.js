@@ -9,14 +9,15 @@ const path = require('path');
 const fbStrategy = new Strategy({
   clientID: process.env['FB_APP_ID'],
   clientSecret: process.env['FB_SECRET'],
-  callbackURL: 'http://localhost:3001/api/fbauth/oauth2/redirect/www.facebook.com',
+  callbackURL: process.env['FB_CALLBACK'],
   profileFields: ['id', 'email', 'link', 'locale', 'name',
     'timezone', 'updated_time', 'verified', 'displayName']
 },
   (accessToken, refreshToken, profile, cb) => {
     FederatedUser.findOne({
       where: {
-        email: profile.emails[0].value
+        email: profile.emails[0].value,
+        provider: 'facebook'
       }
     }).then( dbUserData => {
       if (!dbUserData) {
@@ -29,11 +30,7 @@ const fbStrategy = new Strategy({
         ).then(dbUserData => {
           console.log('new federated user created with facebook provider');
           console.log(dbUserData);
-          let user = {
-            id: dbUserData['id'],
-            email: dbUserData['email'],
-            provider: dbUserData['provider']
-          }
+          // Don't pass federated user details. always use profile
           return cb(null, profile);
         })
           .catch(err => {
@@ -44,11 +41,7 @@ const fbStrategy = new Strategy({
       console.log('DB uesr data is '+JSON.stringify(dbUserData));
       if (dbUserData['provider'] == 'facebook' && dbUserData['email'] == profile.emails[0].value) {
         console.log('user found in federated users list with provider');
-        let user = {
-          id: dbUserData['id'],
-          email: dbUserData['email'],
-          provider: dbUserData['provider']
-        }
+        // Don't pass federated user details. always use profile
         return cb(null, profile);
       } else {
         console.log('user found with email but provider not matching');
@@ -64,9 +57,16 @@ const fbStrategy = new Strategy({
 
 passport.use('facebook',fbStrategy);
 
+passport.serializeUser(function (profile, done) {
+  console.log('we came to store a fb session : '+JSON.stringify(profile));
+  process.nextTick(function() {
+      done(null, profile);
+  });
+});
+
 
 passport.deserializeUser(function (profile, done) {
-  console.log('we came to retrieve a session : ');
+  console.log('we came to retrieve a fb session : ');
   console.log(JSON.stringify(profile));
       process.nextTick(function() {
         done(null, profile);

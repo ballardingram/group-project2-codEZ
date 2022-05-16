@@ -34,11 +34,12 @@ app.use(session({
   store: new SequelizeStore({
     db: sequelize,
     checkExpirationInterval: 15 * 60 * 1000, // The interval at which to cleanup expired sessions in milliseconds.
-    expiration: 30 * 60 * 1000  // The maximum age (in milliseconds) of a valid session.
+    expiration: 30 * 60 * 1000 , // The maximum age (in milliseconds) of a valid session.
+    unset: 'destroy'    
       }),
       cookie: {
         maxAge: 30 * 60 * 1000, //30 minutes
-        sameSite: true,
+        sameSite: false,
         secure: false
       }
   }),

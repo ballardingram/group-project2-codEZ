@@ -34,14 +34,14 @@ passport.use('local', new LocalStrategy(
 );
 
 passport.serializeUser(function (user, done) {
-  console.log('we came to store a session : '+user);
+  console.log('we came to store a session : '+JSON.stringify(user));
   process.nextTick(function() {
       done(null, user);
   });
 });
 
 passport.deserializeUser(function (user, done) {
-  console.log('we came to retrieve a session : '+user);
+  console.log('we came to retrieve a session : '+JSON.stringify(user));
       process.nextTick(function() {
         done(null, user);
       });
