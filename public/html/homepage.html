@@ -16,8 +16,8 @@
 
 <body>
   <!-- Navigation -->
-  <nav class="navbar sticky-top navbar-expand-md navbar-light bg-light">
-    <h1 class="navbar-brand"> <span class="logo-1">{</span>COD<span class="logo-1">}</span>EZ<span class="logo-2"> .community</span></h1>
+  <nav class="navbar sticky-top navbar-expand-md navbar-light bg-light" id="navigation">
+    <h1 class="navbar-brand"> <span class="logo-1">{</span>COD<span class="logo-1">}</span>EZ<span class="logo-2"> .COMMUNITY</span></h1>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -39,22 +39,36 @@
     </div>
   </nav>
 
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-3 col-md-4">
-        <button type="button" class="btn btn-primary w-100" id="tip-form">Submit a tip here!</button>
-      </div>
+  <!-- Submit a Tip -->
+  <div class="container-fluid" id="tip-submit">
+      <div class="row justify-content-center">
+        <div class="col-sm-11">
+            <button type="button" class="btn w-100" id="tip-form">
+              Submit a tip here!
+            </button>
+          </div>
+        </div>
     </div>
-  </div>
-
-  <div class="container-fluid" id="filter-container">
-    <div class="row">
-      <div class="col-lg-4 col-md-5">
-        <h3 class="w-100">Displaying: Most Recent</h3>
+        
+    <!-- Filter -->
+  <div class="container-fluid" id="filter">
+    <div class="row justify-content-around">
+      <div class="col-sm-11">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Filter Tips:
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">HTML</a>
+            <a class="dropdown-item" href="#">CSS</a>
+            <a class="dropdown-item" href="#">JS</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
  
+   <!-- Tip Cards -->
   <div class="container-fluid">
     <div class="row justify-content-around">
       <div class="col-sm-11">
@@ -124,23 +138,11 @@
     <h1>Your coding resource for expert advice submitted by members of the {COD}EZ.community</h1>
   </div> -->  
 
-  <!-- SEARCH by LANGUAGE -->
-  <!-- <div class="btn-container" role="group" aria-label="Search by Tags">
-    <button type="search" class="tag-btn">HTML</button>
-    <button type="search" class="tag-btn">CSS</button>
-    <button type="search" class="tag-btn">JAVASCRIPT</button>
-    <button type="search" class="tag-btn">API</button>
-    <button type="search" class="tag-btn">NODE</button>
-    <button type="search" class="tag-btn">MYSQL</button>
-    <button type="search" class="tag-btn">EXPRESS</button>
-    <button type="search" class="tag-btn">HANDLEBARS</button>
-    <button type="search" class="tag-btn">MOST RECENT</button>
-  </div> -->
-
   <!-- FOOTER -->
   <div class="container mt-5">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-bottom row justify-content-center">
+    <nav class="navbar navbar-expand navbar-dark bg-dark fixed-bottom justify-content-center" id="navigation">
       <div class="navbar-nav text-center">
+        <a class="nav-item nav-link" href="./account.html">My Account<span class="sr-only">(My Account)</span></a>
         <a class="nav-item nav-link" href="./privacy-policy.html">Privacy Policy<span class="sr-only">(Privacy Policy)</span></a>
         <a class="nav-item nav-link" href="./terms-of-service.html">Terms of Use<span class="sr-only">(Terms of Use)</span></a>
         <a class="nav-item nav-link" href="./homepage.html">&copy2022 TeamVeggie<span class="sr-only">(Home Page)</a>
@@ -148,9 +150,5 @@
     </nav>
   </div>
 
-  <!-- MODAL? -->
-
-
 </body>
-
 </html>
