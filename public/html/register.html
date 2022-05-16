@@ -39,46 +39,52 @@
     </div>
   </nav>
 
-  <form class="container" id="form-container">
+  <div class="container" id="form-container">
     <div class="row justify-content-center">
       <div class="col-xl-6 col-lg-8 col-md-9 col-sm-11">
         <h2>Register</h2>
         <hr>
-        <div class="form-outline mb-4">
-          <input type="email" id="form-username" class="form-control" />
-          <label class="form-label" for="form-username">User Name</label>
-        </div>
-        <div class="form-outline mb-4">
-          <input type="email" id="form-email" class="form-control" />
-          <label class="form-label" for="form-email">Email address</label>
-        </div>
-        <div class="form-outline mb-4">
-          <input type="password" id="form-password" class="form-control" />
-          <label class="form-label" for="form-password">Password</label>
-        </div>
-        <div class="row mb-4">
-          <div class="col d-flex justify-content-center">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="form-remember" checked />
-              <label class="form-check-label" for="form-remember"> Remember me </label>
+        <form action="/api/auth" method="post" enctype="application/x-www-form-urlencoded">
+          <div class="form-outline mb-4">
+            <input type="text" class="form-control" id="username" name="username"/>
+            <label class="form-label" for="username">User Name</label>
+          </div>
+          <div class="form-outline mb-4">
+            <input type="email" class="form-control" id="email" name="email"/>
+            <label class="form-label" for="email">Email address</label>
+          </div>
+          <div class="form-outline mb-4">
+            <input type="password" class="form-control" id="password" name="password" />
+            <label class="form-label" for="password">Password</label>
+          </div>
+          <div class="row mb-4">
+            <div class="col d-flex justify-content-center">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="remember" checked />
+                <label class="form-check-label" for="remember"> Remember me </label>
+              </div>
             </div>
           </div>
-        </div>
-        <button type="button" class="btn btn-block mb-4 si-btn">Create my Account</button>
+          <button type="submit" class="btn btn-block mb-4 si-btn">Create my Account</button>
+        </form>
         <div class="text-center">
           <p>or:</p>
-          <button type="button" class="btn btn-block mb-4 fb-btn">
-            <i class="fab fa-facebook-f"></i>  Sign up with Facebook
-          </button>
-          <button type="button" class="btn btn-block mb-4 gh-btn">
-            <i class="fab fa-github"></i></i>  Sign up with GitHub
-          </button>
+          <form action="/api/fbauth/loginfacebook" method="post" enctype="application/x-www-form-urlencoded">
+            <button type="submit" class="btn btn-block mb-4 fb-btn">
+              <i class="fab fa-facebook-f"></i>  Sign up with Facebook
+            </button>
+          </form>
+          <form action="/api/ghauth/github" method="post" enctype="application/x-www-form-urlencoded">
+            <button type="submit" class="btn btn-block mb-4 gh-btn">
+              <i class="fab fa-github"></i></i>  Sign up with GitHub
+            </button>
+          </form>
           <p>Already a member? <a href="./login.html">Login Here</a></p>
         </div>
         <hr>
       </div>
     </div>
-  </form>
+  </div>
 
   <!-- FOOTER -->
   <div class="container mt-5">
