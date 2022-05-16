@@ -39,17 +39,17 @@
     </div>
   </nav>
 
-  <form class="container" id="form-container">
+  <form class="container" id="form-container" enctype="application/x-www-form-urlencoded">
     <div class="row justify-content-center">
       <div class="col-xl-6 col-lg-8 col-md-9 col-sm-11">
         <h2>Login</h2>
         <hr>
         <div class="form-outline mb-4">
-          <input type="email" id="form-username" class="form-control" />
+          <input type="text" id="form-username" class="form-control" name="username" />
           <label class="form-label" for="form-username">User Name</label>
         </div>
         <div class="form-outline mb-4">
-          <input type="password" id="form-password" class="form-control" />
+          <input type="password" id="form-password" class="form-control" name="password" />
           <label class="form-label" for="form-password">Password</label>
         </div>
         <div class="row mb-4">
