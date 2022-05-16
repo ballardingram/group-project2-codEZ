@@ -15,7 +15,7 @@ font-family: 'Roboto', sans-serif; */
 body {
   font-family: 'Roboto', sans-serif;
   color: var(--charcoal);
-
+  background-color: #f6f6f6;
 }
 
 .navbar {
@@ -166,6 +166,16 @@ body {
 /* Body of LOGIN START */
 #form-container {
   margin-top: 35px;
+}
+
+.fb-btn {
+  color: white;
+  background-color: #4267b2;
+}
+
+.gh-btn {
+  color: white;
+  background-color: #6cc644;
 }
 /* Body of Homepage END */
 
