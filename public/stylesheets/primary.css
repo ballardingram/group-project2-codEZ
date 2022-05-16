@@ -3,16 +3,19 @@ font-family: 'Gruppo', cursive;
 font-family: 'Monoton', cursive;
 font-family: 'Roboto', sans-serif; */
 
+/* --electricBlue: #4831d4; */
+
 :root {
   --primary: black;
-  --electricGreen: #ccf381;
-  --electricBlue: #4831d4;
+  --electricGreen: #b4ff79;
+  --electricBlue: #1900a0;
   --charcoal: #404040;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
   color: var(--charcoal);
+  background-color: #f6f6f6;
 }
 
 .navbar {
@@ -126,16 +129,53 @@ body {
 }
 /* Header Buttons END */
 
-.icon-size {
-  font-size: 125px;
-}
 
+/* Body of Homepage START */
 #tip-form {
   color: white;
   background-color: var(--electricBlue);
 }
 
+#filter-container {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.fa-html5 {
+  color: #e34c26;
+}
+
+.fa-css3 {
+  color: #2965f1;
+}
+
+.fa-js-square {
+  color: #f0db4f;
+}
+
+.fa-node-js {
+  color: #68a063;
+}
+
+.fa-css3-alt {
+  color: #0ba8e6;
+}
+/* Body of Homepage END */
+
+
+/* Body of LOGIN START */
 #form-container {
   margin-top: 35px;
 }
+
+.fb-btn {
+  color: white;
+  background-color: #4267b2;
+}
+
+.gh-btn {
+  color: white;
+  background-color: #6cc644;
+}
+/* Body of Homepage END */
 
