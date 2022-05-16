@@ -8,7 +8,7 @@ font-family: 'Roboto', sans-serif; */
 :root {
   --primary: #152069;
   --secondary: #3cba54;
-  --accent: #93c244;
+  --danger: #c70000;
   --charcoal: black;
 }
 
@@ -186,7 +186,7 @@ body {
 /* Body of Homepage END */
 
 
-/* Body of LOGIN START */
+/* Body FORM pages START */
 #form-container {
   margin-top: 35px;
 }
@@ -217,6 +217,26 @@ body {
 }
 
 .gh-btn:hover {
+  color: white;
+  background-color: black;
+}
+
+.update-btn {
+  color: white;
+  background-color: var(--secondary);
+}
+
+.update-btn:hover {
+  color: white;
+  background-color: black;
+}
+
+.delete-btn {
+  color: white;
+  background-color: var(--danger);
+}
+
+.delete-btn:hover {
   color: white;
   background-color: black;
 }
