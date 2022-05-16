@@ -6,9 +6,9 @@ font-family: 'Roboto', sans-serif; */
 /* --electricBlue: #4831d4; */
 
 :root {
-  --primary: black;
-  --electricGreen: #b4ff79;
-  --electricBlue: #1900a0;
+  --primary: #3982d8;
+  --secondary: #7da739;
+  --accent: #93c244;
   --charcoal: #404040;
 }
 
@@ -39,6 +39,10 @@ body {
 }
 
 /* Header Buttons START */
+.wrappers a i {
+  color: white;
+}
+
 .wrappers {
   font-size: 25px;
   font-weight: bold;
@@ -59,12 +63,24 @@ body {
   padding-right: 12px;
 }
 
+.wrappers .icon {
+  margin: 0 20px;
+  cursor: pointer;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+
 .wrappers .icon span {
   position: relative;
+  z-index: 2;
   height: 40px;
   width: 40px;
   display: block;
-  background: var(--electricBlue);
+  background: var(--primary);
   border-radius: 50%;
   text-align: center;
   transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -73,19 +89,16 @@ body {
 .wrappers .icon span i {
   font-size: 24px;
   line-height: 34px;
-  color: white;
-}
-
-.wrappers .icon span i:hover {
-  color: var(--charcoal);
 }
 
 .wrappers .icon .tooltips {
   position: absolute;
   bottom: 0px;
+  background: white;
   font-size: 18px;
-  padding: 4px 6px 1px 6px;
-  border-radius: 10px;
+  padding: 8px 14px;
+  border-radius: 15px;
+  color: white;
   opacity: 0;
   pointer-events: none;
   transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -93,7 +106,8 @@ body {
 
 .wrappers .icon:hover .tooltips {
   opacity: 1;
-  bottom: -50px;
+  pointer-events: auto;
+  bottom: -55px;
 }
 
 .wrappers .icon .tooltips:before {
@@ -106,26 +120,30 @@ body {
   transform: translateX(-50%) rotate(45deg);
 }
 
+.wrappers .icon:hover span{
+  color: white;
+}
+
 .wrappers .user:hover span,
 .wrappers .user:hover .tooltips,
 .wrappers .user:hover .tooltips:before {
-  background: var(--electricGreen);
+  background: var(--secondary);
 }
 
 .wrappers .home:hover span,
 .wrappers .home:hover .tooltips,
 .wrappers .home:hover .tooltips:before {
-  background:var(--electricGreen);
+  background: var(--secondary);
 }
 
 #search-btn {
   color: white;
-  background-color: var(--electricBlue);
+  background-color: var(--primary);
 }
 
 #search-btn:hover {
   color: var(--charcoal);
-  background-color: var(--electricGreen);
+  background-color: var(--secondary);
 }
 /* Header Buttons END */
 
@@ -168,14 +186,34 @@ body {
   margin-top: 35px;
 }
 
+.si-btn {
+  color: white;
+  background-color: var(--electricBlue);
+}
+
+.si-btn:hover {
+  color: white;
+  background-color: black;
+}
+
 .fb-btn {
   color: white;
   background-color: #4267b2;
 }
 
+.fb-btn:hover {
+  color: white;
+  background-color: black;
+}
+
 .gh-btn {
   color: white;
   background-color: #6cc644;
+}
+
+.gh-btn:hover {
+  color: white;
+  background-color: black;
 }
 /* Body of Homepage END */
 
