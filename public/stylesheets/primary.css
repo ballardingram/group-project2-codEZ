@@ -18,7 +18,7 @@ body {
   background-color: #f6f6f6;
 }
 
-.navbar {
+#navigation {
   padding: 2px 16px;
 }
 
@@ -33,7 +33,7 @@ body {
 }
 
 .logo-2 {
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 600;
   font-style: italic;
 }
@@ -153,15 +153,16 @@ body {
   color: white;
   background-color: var(--primary);
   border: none;
+  margin-top: 50px;
+  margin-bottom: 10px;
 }
 
 #tip-form:hover {
   background-color: var(--secondary);
 }
 
-#filter-container {
-  margin-top: 30px;
-  margin-bottom: 10px;
+#filter {
+  margin-bottom: 5px;
 }
 
 .fa-html5 {

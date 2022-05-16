@@ -11,7 +11,7 @@
   <script src="https://kit.fontawesome.com/10c0b6b763.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
   <link rel="stylesheet" href="../stylesheets/primary.css">
-  <title>{COD}EZ Homepage</title>
+  <title>{COD}EZ My Account</title>
 </head>
 
 <body>
@@ -39,31 +39,28 @@
     </div>
   </nav>
 
-
   <form class="container" id="form-container">
     <div class="row justify-content-center">
       <div class="col-lg-8">
         <h2>My Account</h2>
         <hr>
         <h4 class="mb-3">Personal Information</h4>
-
         <div class="form-outline mb-4">
-          <label class="form-label" for="form2Example2">User Name</label>
-          <input type="password" id="form2Example2" class="form-control" placeholder="JaneD0e" />
+          <label class="form-label" for="form-username">User Name</label>
+          <input type="password" id="form-username" class="form-control" placeholder="JaneD0e" />
         </div>
-
         <div class="form-outline mb-4">
-          <label class="form-label" for="form2Example1">Email Address</label>
-          <div>
-            <input type="email" id="form2Example1" class="form-control" placeholder="janedoe@gmail.com" />
-          </div> 
+          <label class="form-label" for="form-email">Email Address</label>
+          <input type="password" id="form-email" class="form-control" placeholder="janedoe@gmail.com" />
         </div>
-
         <div class="form-outline mb-4">
-          <label class="form-label" for="form2Example2">Password</label>
-          <input type="password" id="form2Example2" class="form-control" placeholder="**********" />
+          <label class="form-label" for="form-password">Password</label>
+          <input type="password" id="form-password" class="form-control" placeholder="**********" />
         </div>
-
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form-confirm-password">Confirm Password</label>
+          <input type="password" id="form-confirm-password" class="form-control" placeholder="**********" />
+        </div>
         <button type="button" class="btn btn-block mb-4 update-btn">Update Account</button>
         <button type="button" class="btn btn-block mb-4 delete-btn">Delete Account</button>
         <div class="text-center">
@@ -78,7 +75,7 @@
 
   <!-- FOOTER -->
   <div class="container mt-5">
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-bottom row justify-content-center">
+    <nav class="navbar navbar-expand navbar-dark bg-dark fixed-bottom justify-content-center">
       <div class="navbar-nav text-center">
         <a class="nav-item nav-link" href="./account.html">My Account<span class="sr-only">(My Account)</span></a>
         <a class="nav-item nav-link" href="./privacy-policy.html">Privacy Policy<span class="sr-only">(Privacy Policy)</span></a>
