@@ -9,7 +9,6 @@ passport.use('local', new LocalStrategy(
   (username, password, cb) => {
       console.log("we are validateing user : " + Date.now());
       User.findOne({
-          attributes: { include: ['password'] },
           where: {
               username: username
           }

@@ -1,6 +1,7 @@
 // IMPORT > MODELS
 const User = require('./users');
 const Tips = require('./tips');
+const FederatedUser  = require('./federatedUsers');
 
 // RELATION > USER TO TIPS - ONE TO MANY
 User.hasMany(Tips, {
@@ -12,4 +13,4 @@ Tips.belongsTo(User, {
     foreignKey: 'username',
 });
 
-module.exports = { User, Tips};
+module.exports = { User, Tips, FederatedUser};

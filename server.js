@@ -38,13 +38,14 @@ app.use(session({
       }),
       cookie: {
         maxAge: 30 * 60 * 1000, //30 minutes
-        sameSite: true
+        sameSite: true,
+        secure: false
       }
   }),
 );
 
-// app.use(passport.initialize());
-app.use(passport.authenticate('session'));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(function(req, res, next) {
   var msgs = req.session.messages || [];
   res.locals.messages = msgs;

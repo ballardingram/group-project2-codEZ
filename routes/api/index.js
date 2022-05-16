@@ -3,6 +3,7 @@ const router = require('express').Router();
 const userRoutes = require('./user-routes');
 const authRoutes = require('./authentication-routes');
 const tipsRoutes = require('./tips-routes');
+const fbauthroutes = require('./passport-fb-auth');
 
 const {tips} = require("../../db/db.json");
 const { v4: uuidv4 } = require('uuid');
@@ -11,6 +12,7 @@ const { v4: uuidv4 } = require('uuid');
 router.use('/users', userRoutes);
 router.use('/auth', authRoutes);
 router.use('/tips', tipsRoutes);
+router.use('/fbauth', fbauthroutes );
 
 
 //ROUTES > GET ALL EXISTING TIPS

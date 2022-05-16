@@ -72,14 +72,18 @@
           </span>
         </p>
         <button type="submit" class="submit">Login to Account</button>
-
+      </form>
         <p>or</p>
-        <button type="submit" class="icon-btn facebook"><i class="fa-brands fa-facebook"></i>    LOG IN WITH FACEBOOK</button>
+        <!-- <button type="submit" class="icon-btn facebook"><i class="fa-brands fa-facebook"></i>    LOG IN WITH FACEBOOK</button> -->
+        <form action="/api/fbauth/loginfacebook" method="get" enctype="application/x-www-form-urlencoded">
+          <button type="submit" class="icon-btn facebook"><i class="fa-brands fa-facebook"></i></i>    Login with Facebook</button>  
+        </form>
+        
         <button type="submit" class="icon-btn github"><i class="fa-brands fa-github"></i>    LOG IN WITH GITHUB</button>
   
         
         
-      </form>
+      
     </div>
 
   </div>
