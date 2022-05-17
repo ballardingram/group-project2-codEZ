@@ -3,15 +3,14 @@ var passport = require('passport')
 const express = require('express')
 const routes = require('./routes');
 const app = express()
-var path = require('path');
-// const bodyParser = require('body-parser');
 
+var path = require('path');
+
+app.use(express.static(path.join(__dirname, 'public')));
 var cookieParser = require('cookie-parser');
 const session = require('express-session');
 var SequelizeStore = require("connect-session-sequelize")(session.Store);
 const { v4: uuidv4 } = require('uuid'); 
-// var http = require('http').Server(app);
-
 
 
 const sequelize = require('./config/connection');
@@ -23,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 
-app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(cookieParser());
 
 app.use(session({

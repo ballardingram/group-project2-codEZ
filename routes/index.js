@@ -36,9 +36,14 @@ router.get('/logout', function(req, res, next) {
     
 });
 
+router.get('/submittip',checkAuthentication,  (req,res) => {
+  console.log("sending user account page");
+  res.sendFile(path.join(__dirname, '../public/html', 'submit-tip.html'));
+});
+
 router.get('/userhome', checkAuthentication,  (req,res) => {
   console.log("sending user home page");
-  res.sendFile(path.join(__dirname, '../public/html', 'homepagewithlogin.html'));
+  res.sendFile(path.join(__dirname, '../public/html', 'homepage.html'));
   
 });
 
@@ -49,8 +54,22 @@ router.get('/usertips', checkAuthentication,  (req,res) => {
 
 router.get('/myaccount',checkAuthentication,  (req,res) => {
   console.log("sending user account page");
-  res.sendFile(path.join(__dirname, '../public/html', 'myaccount.html'));
+  res.sendFile(path.join(__dirname, '../public/html', 'account.html'));
 });
+
+router.get('/privacy-policy',  (req,res) => {
+  console.log("sending user account page");
+  res.sendFile(path.join(__dirname, '../public/html', 'privacy-policy.html'));
+});
+
+
+router.get('/terms-of-service',  (req,res) => {
+  console.log("sending user account page");
+  res.sendFile(path.join(__dirname, '../public/html', 'terms-of-service.html'));
+});
+
+
+
 
 
 function checkAuthentication(req,res,next){
