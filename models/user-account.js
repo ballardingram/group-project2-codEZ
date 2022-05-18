@@ -28,7 +28,14 @@ UserAccount.init(
                 validate: {
                     len: [8]
                 }
+        },
+        userid: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'User',
+                key: 'id'
             }
+        }
         },
         {
             hooks: {
