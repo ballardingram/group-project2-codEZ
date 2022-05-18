@@ -33,6 +33,31 @@ passport.use('local', new LocalStrategy(
   })
 );
 
+//signup strategy locally
+passport.use('local-signup', new LocalStrategy({usernameField: 'username',
+passwordField: 'password', passReqToCallback: true},
+  (req, username, password, cb) => {
+      console.log("we are registering a user : " + Date.now());
+      User.create({
+        username: username,
+        email: req.body.email,
+        password: password
+    })
+    .then(dbUserData => 
+          {
+            let user = dbUserData['dataValues'];
+            user['password'] = undefined;
+            return cb(null, dbUserData);
+          }
+      )
+    .catch(err => {
+        console.error('internal db failure while storing user: '+err);
+        return cb(null, false, {message: 'internal db failure while storing user: '+err})
+    });
+  }
+));
+
+
 passport.serializeUser(function (user, done) {
   console.log('we came to store a session : '+JSON.stringify(user));
   process.nextTick(function() {
@@ -54,6 +79,12 @@ passport.deserializeUser(function (user, done) {
 router.post('/', passport.authenticate('local', {
   successReturnToOrRedirect: '/userhome',
   failureRedirect: '/login',
+  failureMessage: true
+}) );
+
+router.post('/signup', passport.authenticate('local-signup', {
+  successReturnToOrRedirect: '/userhome',
+  failureRedirect: '/register',
   failureMessage: true
 }) );
 
