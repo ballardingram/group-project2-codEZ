@@ -15,14 +15,27 @@
 </head>
 
 <body>
-
-  <!-- JUMBOTRON -->
-  <header class="top-nav">
-    <h1 class="logo">{COD}EZ.<span>community</span></h1>
-    <div class="menu">
-      <li><a href="/" class="fa-solid fa-house"></a></li>
-      <li><a href="/login" class="fa-solid fa-user"></a></li>
-      <li><a href="/logout" class="fa-solid fa-sign-out"></a></li>
+   <!-- Navigation -->
+   <nav class="navbar sticky-top navbar-expand-md navbar-light bg-light">
+    <h1 class="navbar-brand"> <span class="logo-1">{</span>COD<span class="logo-1">}</span>EZ<span class="logo-2"> .community</span></h1>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="navbar-nav ml-auto wrappers">
+        <div class="nav-item active icon home">
+          <div class="tooltips">HOME</div>
+          <a class="nav-link" href="/"><span><i class="fa-solid fa-house"></i></span></a>
+        </div>
+        <div class="nav-item active icon user">
+          <div class="tooltips">LOGIN</div>
+          <a class="nav-link" href="/account"><span><i class="fa-solid fa-user"></i></span></a>
+        </div>
+      </div>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn my-2 my-sm-0" id="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
     </div>
   </nav>
 
@@ -30,7 +43,7 @@
   <div class="container-fluid" id="tip-submit">
       <div class="row justify-content-center">
         <div class="col-sm-11">
-            <a href="/submittip" type="button" class="btn w-100" id="tip-form">
+            <a href="/submit-tip" type="button" class="btn w-100" id="tip-form">
               Submit a tip here!
             </a>
           </div>
@@ -137,7 +150,7 @@
   <div class="container mt-5">
     <nav class="navbar navbar-expand navbar-dark bg-dark fixed-bottom justify-content-center" id="navigation">
       <div class="navbar-nav text-center">
-        <a class="nav-item nav-link" href="/myaccount">My Account<span class="sr-only">(My Account)</span></a>
+        <a class="nav-item nav-link" href="/account">My Account<span class="sr-only">(My Account)</span></a>
         <a class="nav-item nav-link" href="/privacy-policy">Privacy Policy<span class="sr-only">(Privacy Policy)</span></a>
         <a class="nav-item nav-link" href="/terms-of-service">Terms of Use<span class="sr-only">(Terms of Use)</span></a>
         <a class="nav-item nav-link" href="/">&copy2022 TeamVeggie<span class="sr-only">(Home Page)</a>

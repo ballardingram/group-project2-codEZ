@@ -52,9 +52,14 @@ router.get('/usertips', checkAuthentication,  (req,res) => {
   res.sendFile(path.join(__dirname, '../public/html', 'mytips.html'));
 });
 
-router.get('/myaccount',checkAuthentication,  (req,res) => {
+router.get('/account',checkAuthentication,  (req,res) => {
   console.log("sending user account page");
   res.sendFile(path.join(__dirname, '../public/html', 'account.html'));
+});
+
+router.get('/submit-tip', checkAuthentication, (req,res) => {
+  console.log("sending user account page");
+  res.sendFile(path.join(__dirname, '../public/html', 'submit-tip.html'));
 });
 
 router.get('/privacy-policy',  (req,res) => {
@@ -68,6 +73,10 @@ router.get('/terms-of-service',  (req,res) => {
   res.sendFile(path.join(__dirname, '../public/html', 'terms-of-service.html'));
 });
 
+router.get('/signup',(req,res) => {
+  console.log("sending user account page");
+  res.sendFile(path.join(__dirname, '../public/html', 'register.html'));
+} );
 
 
 
