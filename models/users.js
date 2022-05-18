@@ -20,11 +20,11 @@ User.init(
         },
         first_name: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         last_name: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         email: {
             type: DataTypes.STRING,
@@ -34,19 +34,19 @@ User.init(
                 isEmail: true
             }
         },
-        paranoid: true
+        provider: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: false 
+        },
+        paranoid: {
+            type: DataTypes.BOOLEAN,
+            
+            unique: false ,
+            default: false
+        },
     },
     {
-        hooks: {
-            async beforeCreate(newUserData) {
-                newUserData.password = await bcrypt.hash(newUserData.password, 10);
-                return newUserData;
-            },
-            async beforeUpdate(updatedUserData) {
-                updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
-                return updatedUserData;
-            }
-        },
         sequelize,
         timestamps: false,
         freezeTableName: true,

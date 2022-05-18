@@ -1,17 +1,22 @@
 const passport = require('passport')
 const bcrypt = require('bcrypt')
 const LocalStrategy = require('passport-local');
-const { User } = require('../../models');
+const { User, UserAccount } = require('../../models');
 const router = require('express').Router();
 
 /* Actual authentication logic, getting user from DB, validating password sending user back */
 passport.use('local', new LocalStrategy(
   (username, password, cb) => {
       console.log("we are validateing user : " + Date.now());
-      User.findOne({
+      UserAccount .findOne({
           where: {
               username: username
-          }
+          },
+          include: [
+            {
+                model: User
+            }
+        ]
       }).then(async(dbuser) => {
           if (!dbuser) {
             console.log('no user found');
@@ -19,8 +24,7 @@ passport.use('local', new LocalStrategy(
           }
           if (username ==dbuser['username'] && await bcrypt.compare(password, dbuser['password'])) {
             console.log('User authenticated');
-              let user = dbuser['dataValues'];
-              user['password'] = undefined;
+              let user = dbuser['dataValues']['user'];
               return cb(null, user);
           }
           else {
@@ -39,15 +43,32 @@ passwordField: 'password', passReqToCallback: true},
   (req, username, password, cb) => {
       console.log("we are registering a user : " + Date.now());
       User.create({
-        username: username,
         email: req.body.email,
-        password: password
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        provider: 'codez',
+        paranoid: false
     })
     .then(dbUserData => 
           {
-            let user = dbUserData['dataValues'];
-            user['password'] = undefined;
+            if(!dbUserData){
+              console.error('internal db failure while creating user: '+err);
+              return cb(null, false, {message: 'internal db failure while storing user: '+err})
+            }
+            else{
+              UserAccount.create({
+                username: username,
+                password: password
+              }).then( dbUserAccountData => {
+                if(!dbUserAccountData){
+                  console.error('internal db failure while creating user: '+err);
+                  //Need to find out a way to delete user data here
+                  return cb(null, false, {message: 'internal db failure while storing user: '+err})
+                }
+              })
+            }
             return cb(null, dbUserData);
+            
           }
       )
     .catch(err => {
