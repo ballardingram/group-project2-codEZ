@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Gruppo&family=Monoton&family=Roboto:wght@500&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/10c0b6b763.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+  <link rel="stylesheet" href="../stylesheets/primary.css">
+  <title>{COD}EZ Submit Tip</title>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar sticky-top navbar-expand-md navbar-light bg-light">
+    <h1 class="navbar-brand"> <span class="logo-1">{</span>COD<span class="logo-1">}</span>EZ<span class="logo-2"> .community</span></h1>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="navbar-nav ml-auto wrappers">
+        <div class="nav-item active icon home">
+          <div class="tooltips">HOME</div>
+          <a class="nav-link" href="./homepage.html"><span><i class="fa-solid fa-house"></i></span></a>
+        </div>
+        <div class="nav-item active icon user">
+          <div class="tooltips">LOGIN</div>
+          <a class="nav-link" href="./login.html"><span><i class="fa-solid fa-user"></i></span></a>
+        </div>
+      </div>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn my-2 my-sm-0" id="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+    </div>
+  </nav>
+
+  <!-- Submit Tip Form -->
+  <div class="container" id="form-container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h1>Submission Form</h1>
+        <hr>
+        <h2>Guidelines</h2>
+        <ul>
+          <li>All submissions must be your original work.</li>
+          <li>All submissions must be in English.</li>
+          <li>Submissions are not anonymous and will be associated with your profile and username</li>
+        </ul>
+
+        <!-- Dropdown for languages -->
+        <!-- Textarea for submission -->
+
+        <form action="/api/auth" method="post" enctype="application/x-www-form-urlencoded">
+
+          <div class="form-outline mb-4">
+            <label class="form-label mt-2" for="tip-title">Tip Title *</label>
+            <input type="text" id="tip-title" class="form-control" />
+          </div>
+
+          <div class="form-outline">
+            <label class="form-label mt-2" for="tip-details">Tip Details *</label>
+            <textarea name="tip-details" id="tip-details" class="form-control" rows="6"></textarea>
+          </div>
+
+
+          <button type="button" class="btn btn-block mb-4" id="tip-form">Submit Tip</button>
+        </form>
+        <hr>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="container mt-5">
+    <nav class="navbar navbar-expand navbar-dark bg-dark fixed-bottom justify-content-center" id="navigation">
+      <div class="navbar-nav text-center">
+        <a class="nav-item nav-link" href="./account.html">My Account<span class="sr-only">(My Account)</span></a>
+        <a class="nav-item nav-link" href="./privacy-policy.html">Privacy Policy<span class="sr-only">(Privacy Policy)</span></a>
+        <a class="nav-item nav-link" href="./terms-of-service.html">Terms of Use<span class="sr-only">(Terms of Use)</span></a>
+        <a class="nav-item nav-link" href="./homepage.html">&copy2022 TeamVeggie<span class="sr-only">(Home Page)</a>
+      </div>
+    </nav>
+  </div>
+
+</body>
+</html>

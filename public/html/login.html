@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Gruppo&family=Monoton&family=Roboto:wght@500&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/10c0b6b763.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
-  <link rel="stylesheet" href="../stylesheets/homepage.css">
+  <link rel="stylesheet" href="../stylesheets/primary.css">
   <title>{COD}EZ Login</title>
 </head>
 
@@ -39,72 +39,64 @@
     </div>
   </nav>
 
-  <form class="container" id="form-container">
+  <!-- Login Form -->
+  <div class="container" id="form-container">
     <div class="row justify-content-center">
       <div class="col-xl-6 col-lg-8 col-md-9 col-sm-11">
-
         <h2>Login</h2>
-
-        <div class="form-outline mb-4">
-          <input type="email" id="form2Example1" class="form-control" />
-          <label class="form-label" for="form2Example1">Email address</label>
-        </div>
-      
-        <div class="form-outline mb-4">
-          <input type="password" id="form2Example2" class="form-control" />
-          <label class="form-label" for="form2Example2">Password</label>
-        </div>
-      
-        <div class="row mb-4">
-          <div class="col d-flex justify-content-center">
-            <!-- Checkbox -->
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-              <label class="form-check-label" for="form2Example31"> Remember me </label>
+        <hr>
+        <form action="/api/auth" method="post" enctype="application/x-www-form-urlencoded">
+          <div class="form-outline mb-4">
+            <label class="form-label" for="username">User Name *</label>
+            <input type="text" class="form-control" id="username" name="username"/>
+          </div>
+          <div class="form-outline mb-4">
+            <label class="form-label" for="password">Password *</label>
+            <input type="password" class="form-control" id="password" name="password"/>
+          </div>
+          <div class="row mb-4">
+            <div class="col d-flex justify-content-center">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="remember" checked/>
+                <label class="form-check-label" for="remember"> Remember me </label>
+              </div>
+            </div>
+            <div class="col">
+              <a href="#!">Forgot password?</a>
             </div>
           </div>
-      
-          <div class="col">
-            <a href="#!">Forgot password?</a>
-          </div>
-        </div>
-
-        <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
+          <button type="submit" class="btn btn-block mb-4 si-btn">Sign in</button>
+        </form>
         <div class="text-center">
-          
           <p>or:</p>
-
-          <button type="button" class="btn btn-primary btn-block mb-4">
-            <i class="fab fa-facebook-f"></i>  Sign up with Facebook
-          </button>
-
-          <button type="button" class="btn btn-primary btn-block mb-4">
-            <i class="fab fa-github"></i></i>  Sign up with GitHub
-          </button>
-
-          <p>Not a member? <a href="#!">Register</a></p>
-      
+          <form action="/api/fbauth/loginfacebook" method="post" enctype="application/x-www-form-urlencoded">
+            <button type="submit" class="btn btn-block mb-4 fb-btn">
+              <i class="fab fa-facebook-f"></i>  Sign in with Facebook
+            </button>
+          </form>
+          <form action="/api/ghauth/github" method="post" enctype="application/x-www-form-urlencoded">
+            <button type="submit" class="btn btn-block mb-4 gh-btn">
+              <i class="fab fa-github"></i></i>  Sign in with GitHub
+            </button>
+          </form>
+          <p>Not a member? <a href="./register.html">Register</a></p>
         </div>
+        <hr>
       </div>
     </div>
-  </form>
+  </div>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="footer-menu">
-      <ul>
-        <li><a href="/"></a>About</li>
-        <li><a href="./privacy-policy.html"></a>Privacy Policy</li>
-        <li><a href="./terms-of-service.html"></a>Terms of Service</li>
-        <li><a href="./login.html"></a>Sign-up / Login</li>
-        <li><a href="/"></a>My Account</li>
-        <li><a href="/"></a>View 'My Tips'</li>
-        <li><a href="/"></a>News</li>
-        <li><a href="/"></a>Submit a Tip</li>
-        <li>&copy2022 TeamVeggie</li>
-      </ul>
-    </div>
-</footer>
+  <div class="container mt-5">
+    <nav class="navbar navbar-expand navbar-dark bg-dark fixed-bottom justify-content-center" id="navigation">
+      <div class="navbar-nav text-center">
+        <a class="nav-item nav-link" href="./account.html">My Account<span class="sr-only">(My Account)</span></a>
+        <a class="nav-item nav-link" href="./privacy-policy.html">Privacy Policy<span class="sr-only">(Privacy Policy)</span></a>
+        <a class="nav-item nav-link" href="./terms-of-service.html">Terms of Use<span class="sr-only">(Terms of Use)</span></a>
+        <a class="nav-item nav-link" href="./homepage.html">&copy2022 TeamVeggie<span class="sr-only">(Home Page)</a>
+      </div>
+    </nav>
+  </div>
 
 </body>
 </html>
