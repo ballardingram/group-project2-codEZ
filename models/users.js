@@ -14,14 +14,17 @@ User.init(
     {
         id: {
             type: DataTypes.INTEGER,
-            allowNUll: false,
+            allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
-        username: {
+        first_name: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true
+        },
+        last_name: {
+            type: DataTypes.STRING,
+            allowNull: false
         },
         email: {
             type: DataTypes.STRING,
@@ -31,13 +34,7 @@ User.init(
                 isEmail: true
             }
         },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [8]
-            }
-        }
+        paranoid: true
     },
     {
         hooks: {
