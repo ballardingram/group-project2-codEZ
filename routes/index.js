@@ -21,6 +21,7 @@ router.get('/login', (req,res) => {
  */
 router.get('/logout', function(req, res, next) {
   console.log('logging out user');
+  req.logout();
   if (req.session) {
     // delete session object
     req.session.destroy(function(err) {
