@@ -46,6 +46,14 @@
         <hr>
         <form action="/api/auth" method="post" enctype="application/x-www-form-urlencoded">
           <div class="form-outline mb-4">
+            <label class="form-label" for="firstname">First Name *</label>
+            <input type="text" class="form-control" id="firstname" name="firstname"/>
+          </div>
+          <div class="form-outline mb-4">
+            <label class="form-label" for="lastname">Last Name *</label>
+            <input type="text" class="form-control" id="lastname" name="lastname"/>
+          </div>
+          <div class="form-outline mb-4">
             <label class="form-label" for="username">User Name *</label>
             <input type="text" class="form-control" id="username" name="username"/>
           </div>
@@ -68,17 +76,6 @@
           <button type="submit" class="btn btn-block mb-4 si-btn">Create my Account</button>
         </form>
         <div class="text-center">
-          <p>or:</p>
-          <form action="/api/fbauth/loginfacebook" method="post" enctype="application/x-www-form-urlencoded">
-            <button type="submit" class="btn btn-block mb-4 fb-btn">
-              <i class="fab fa-facebook-f"></i>  Sign up with Facebook
-            </button>
-          </form>
-          <form action="/api/ghauth/github" method="post" enctype="application/x-www-form-urlencoded">
-            <button type="submit" class="btn btn-block mb-4 gh-btn">
-              <i class="fab fa-github"></i></i>  Sign up with GitHub
-            </button>
-          </form>
           <p>Already a member? <a href="./login.html">Login Here</a></p>
         </div>
         <hr>
