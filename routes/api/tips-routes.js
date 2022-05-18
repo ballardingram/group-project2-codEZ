@@ -6,11 +6,11 @@ const { rawAttributes } = require('../../models/users');
 // ROUTES > ALL TIPS, ALL USERS
 router.get('/', (req, res) => {
     Tips.findAll({
-        attributes: ['id', 'tip_title', 'tip_detail', 'tip_language', 'username'],
+        attributes: ['id', 'tip_title', 'tip_detail', 'tip_language', 'userid'],
         include: [
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['id', 'first_name','last_name', 'email']
             }
         ]
     })
@@ -37,7 +37,13 @@ router.get('/languages', (req, res) => {
 
 router.get('/language/:name', (req, res) => {
     Tips.findAll({
-        attributes: ['id', 'tip_title', 'tip_detail', 'tip_language', 'username'],
+        attributes: ['id', 'tip_title', 'tip_detail', 'tip_language', 'userid'],
+        include: [
+            {
+                model: User,
+                attributes: ['id', 'first_name','last_name', 'email']
+            }
+        ],
         where : {
             tip_language : req.params.name
         }        
@@ -55,11 +61,17 @@ router.get('/language/:name', (req, res) => {
     });
 });
 
-router.get('/usertips/:username', (req, res) => {
+router.get('/usertips/:userid', (req, res) => {
     Tips.findAll({
-        attributes: ['id', 'tip_title', 'tip_detail', 'tip_language', 'username'],
+        attributes: ['id', 'tip_title', 'tip_detail', 'tip_language', 'userid'],
+        include: [
+            {
+                model: User,
+                attributes: ['id', 'first_name','last_name', 'email']
+            }
+        ],
         where : {
-            username : req.params.username
+            userid : req.params.userid
         }        
     }
     ).then(dbTipsData => {
@@ -80,9 +92,14 @@ router.get('/:id', (req, res) => {
     Tips.findOne({
         where: {
             tip_title: req.params.id
-        },
-        attributes: ['id', 'tip_title', 'tip_detail', 'tip_language', 'username'],
-        order: ['tip_language', 'tip_title', 'tip_detail', 'username'],
+        },include: [
+            {
+                model: User,
+                attributes: ['id', 'first_name','last_name', 'email']
+            }
+        ],
+        attributes: ['id', 'tip_title', 'tip_detail', 'tip_language', 'userid'],
+        order: ['tip_language', 'tip_title', 'tip_detail', 'userid'],
         
     })
     .then(dbTipsData => {
@@ -105,7 +122,7 @@ router.post('/', (req, res) => {
         tip_title: req.body.tip_title,
         tip_detail: req.body.tip_detail,
         tip_language: req.body.tip_language,
-        username: req.body.username
+        userid: req.body.userid
     })
     .then(dbTipsData => res.json(dbTipsData))
     .catch(err => {
@@ -118,7 +135,7 @@ router.post('/', (req, res) => {
 router.delete('/:id', (req,res) => {
     Tips.destroy ({
         where: {
-            tid: req.params.id
+            id: req.params.id
         }
     })
     .then(dbTipsData => {
