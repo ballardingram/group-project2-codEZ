@@ -59,7 +59,7 @@ body {
   position: relative;
 }
 
-.user {
+.logout {
   padding-right: 12px;
 }
 
@@ -133,6 +133,12 @@ body {
 .wrappers .home:hover span,
 .wrappers .home:hover .tooltips,
 .wrappers .home:hover .tooltips:before {
+  background: var(--secondary);
+}
+
+.wrappers .logout:hover span,
+.wrappers .logout:hover .tooltips,
+.wrappers .logout:hover .tooltips:before {
   background: var(--secondary);
 }
 
