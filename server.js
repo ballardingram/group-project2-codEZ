@@ -2,9 +2,14 @@ require('dotenv').config()
 var passport = require('passport')
 const express = require('express')
 const routes = require('./routes');
-const app = express()
-
+const exphbs = require('express-handlebars');
 var path = require('path');
+
+const app = express()
+const hbs = exphbs.create({});
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 var cookieParser = require('cookie-parser');
@@ -43,6 +48,10 @@ app.use(session({
       }
   }),
 );
+app.use((req,res,next) => { 
+  res.locals.session = req.session;
+  next();
+});
 
 app.use(passport.initialize());
 app.use(passport.session());

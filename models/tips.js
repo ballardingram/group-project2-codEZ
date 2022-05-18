@@ -25,11 +25,11 @@ Tips.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        username: {
-            type: DataTypes.STRING,
+        userid: {
+            type: DataTypes.INTEGER,
             references: {
                 model: 'User',
-                key: 'username'
+                key: 'id'
             }
         }
     },
