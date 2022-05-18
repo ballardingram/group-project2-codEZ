@@ -1,8 +1,8 @@
-// IMPORT > SEQUELIZE CONSTRUCTOR FROM LIBRARY
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
 // CREATE > CONNECT TO DATABASE, PASS MYSQL INFORMATION FOR USERNAME
+
 const sequelize = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,
@@ -10,9 +10,7 @@ const sequelize = new Sequelize(
     {
         host: 'localhost',
         dialect: 'mysql',
-        port: 3001
+        storage: "./session.mysql",
     }
 );
-
-
 module.exports = sequelize;

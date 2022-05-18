@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const {User} = require('../../models/users');
+const { User } = require('../../models');
+
 
 // GET > ALL USERS
 router.get('/', (req, res) => {
@@ -36,6 +37,7 @@ router.get('/:username', (req, res) => {
 
 // POST > USER
 router.post('/', (req, res) => {
+
     User.create({
         username: req.body.username,
         email: req.body.email,
@@ -68,27 +70,6 @@ router.delete('/:username', (req, res) => {
     });
 });
 
-// VALIDATION > STANDARD LOGIN
-router.post('/login', (req, res) => {
-    User.findOne({
-        where: {
-            username: req.body.username
-        }
-    })
-    .then(dbUserData => {
-        if(!dbUserData) {
-            res.status(400).json({message: 'USERNAME not found.'});
-            return;
-        }
-        const validPW = dbUserData.checkPassword(req.body.password);
 
-        if(!validPW) {
-            res.status(400).json({ message: 'Incorrect Password. Try again.'});
-            return;
-        }
-        res.json({user: dbUserData, message: 'Log In Successful!'});
-        return;
-    });
-});
 
 module.exports = router;

@@ -1,5 +1,5 @@
 const {Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const sequelize = require('../config/connection.js');
 
 // CREATE > TIPS MODEL
 class Tips extends Model {}
@@ -28,7 +28,7 @@ Tips.init(
         username: {
             type: DataTypes.STRING,
             references: {
-                model: 'users',
+                model: 'User',
                 key: 'username'
             }
         }
