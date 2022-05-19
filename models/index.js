@@ -6,9 +6,8 @@ const UserAccount = require('./user-account');
 
 //User account belong to one user 
 UserAccount.belongsTo(User, {
-    foreignKey: 'id',
+    foreignKey: 'userid',
     onDelete: 'CASCADE'
-
 });
 
 // RELATION > USER TO TIPS - ONE TO MANY

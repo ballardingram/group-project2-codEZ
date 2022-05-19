@@ -8,7 +8,7 @@ const router = require('express').Router();
 passport.use('local', new LocalStrategy(
   (username, password, cb) => {
       console.log("we are validateing user : " + Date.now());
-      UserAccount .findOne({
+      UserAccount.findOne({
           where: {
               username: username
           },
@@ -23,8 +23,8 @@ passport.use('local', new LocalStrategy(
               return cb(null, false, { message: 'USER_NOT_FOUND' });
           }
           if (username ==dbuser['username'] && await bcrypt.compare(password, dbuser['password'])) {
-            console.log('User authenticated');
-              let user = dbuser['dataValues']['user'];
+              let user = dbuser['dataValues']['user']['dataValues'];
+              user.username = dbuser['username'];
               return cb(null, user);
           }
           else {
