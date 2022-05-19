@@ -17,7 +17,6 @@ router.get('/', (req, res) => {
         nest: true,
     })
     .then(dbTipsData => {
-        console.log(dbTipsData);
         res.render('index', {tips: dbTipsData});
     })
     .catch(err => {
@@ -128,8 +127,6 @@ router.get('/:id', (req, res) => {
 
 // ROUTES > CREATE A TIP
 router.post('/', checkAuthentication, (req, res) => {
-    console.log('we came to submit a tip');
-    console.log(req.body);
     Tips.create({
         tip_title: req.body.tip_title,
         tip_detail: req.body.tip_detail,
