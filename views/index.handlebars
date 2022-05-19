@@ -1,3 +1,4 @@
+{{> header }}
       <!-- Submit a Tip -->
     <div class="container-fluid" id="tip-submit">
         <div class="row justify-content-center">
@@ -8,8 +9,7 @@
             </div>
         </div>
     </div>
-    
-    <!-- Filter -->
+ <!-- Filter -->
     <div class="container-fluid" id="filter">
         <div class="row justify-content-around">
             <div class="col-sm-11">
@@ -30,88 +30,25 @@
             </div>
         </div>
     </div>
-
     <!-- Tip Cards -->
     <div class="container-fluid">
         <div class="row justify-content-around">
-            <!-- HTML Card -->
+    {{#if tips}}
+         {{#each tips}}
             <div class="col-sm-11">
                 <div class="card mb-3">
-                    <h5 class="card-header"><i class="fa-brands fa-html5 fa-fw"></i>HTML5</h5>
+                    <h5 class="card-header"><i class="fa-brands fa-{{this.tip_language}} fa-fw"></i>{{this.tip_language}}</h5>
                     <div class="card-body">
-                        <h5 class="card-title"> Example Tip Submission</h5>
-                        <p class="card-text">TIP SUBMISSION PREVIEW TEXT Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit, sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.
+                        <h5 class="card-title"><a href="/api/tips/{{this.id}}"> {{this.tip_title}}</a></a></h5>
+                        <p class="card-text">{{this.tip_detail}}
                         </p>
-                        <a href="/">View More</a>
+                        <a href="/api/tips/{{this.id}}"> View More</a>
                     </div>
                 </div>
             </div>
-            <!-- CSS Card -->
-            <div class="col-sm-11">
-                <div class="card mb-3">
-                    <h5 class="card-header"><i class="fa-brands fa-css3 fa-fw"></i>CSS3</h5>
-                    <div class="card-body">
-                        <h5 class="card-title">Example Tip Submission</h5>
-                        <p class="card-text">TIP SUBMISSION PREVIEW TEXT Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit, sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.
-                        </p>
-                        <a href="/">View More</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Javascript Card -->
-            <div class="col-sm-11">
-                <div class="card mb-3">
-                    <h5 class="card-header"><i class="fa-brands fa-js-square fa-fw"></i>JAVASCRIPT</h5>
-                    <div class="card-body">
-                        <h5 class="card-title">Example Tip Submission</h5>
-                        <p class="card-text">TIP SUBMISSION PREVIEW TEXT Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit, sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.
-                        </p>
-                        <a href="/">View More</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Node JS Card -->
-            <div class="col-sm-11">
-                <div class="card mb-3">
-                    <h5 class="card-header"><i class="fa-brands fa-node-js fa-fw"></i>NODE JS</h5>
-                    <div class="card-body">
-                        <h5 class="card-title">Example Tip Submission</h5>
-                        <p class="card-text">TIP SUBMISSION PREVIEW TEXT Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit, sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.
-                        </p>
-                        <a href="/">View More</a>
-                    </div>
-                </div>
-            </div>
-            <!-- CSS Alt Card -->
-            <div class="col-sm-11">
-                <div class="card mb-3">
-                    <h5 class="card-header"><i class="fa-brands fa-css3-alt fa-fw"></i>CSS3</h5>
-                    <div class="card-body">
-                        <h5 class="card-title">Example Tip Submission</h5>
-                        <p class="card-text">TIP SUBMISSION PREVIEW TEXT Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit, sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.
-                        </p>
-                        <a href="/">View More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+            {{/each}}
+    {{/if}}
     </div>
+    </div> 
 
-    <!-- <div class="statement">
-    <h1>Your coding resource for expert advice submitted by members of the {COD}EZ.community</h1>
-  </div> -->
+{{> footer }}

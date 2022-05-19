@@ -17,7 +17,8 @@ router.get('/', (req, res) => {
         nest: true,
     })
     .then(dbTipsData => {
-        res.render('tips', {tips: dbTipsData});
+        console.log(dbTipsData);
+        res.render('index', {tips: dbTipsData});
     })
     .catch(err => {
         console.log(err);
@@ -67,7 +68,7 @@ router.get('/language/:name', (req, res) => {
     });
 });
 
-router.get('/usertips/:userid', (req, res) => {
+router.get('/usertips/:userid',checkAuthentication, (req, res) => {
     Tips.findAll({
         attributes: ['id', 'tip_title', 'tip_detail', 'tip_language', 'userid'],
         include: [
@@ -87,7 +88,7 @@ router.get('/usertips/:userid', (req, res) => {
             res.status(404).json({message: 'No tip found with this title.'});
             return;
         }
-        res.render('usertips', {tips:dbTipsData});
+        res.render('index', {tips:dbTipsData});
     })
     .catch(err => {
         console.log(err);
@@ -126,24 +127,27 @@ router.get('/:id', (req, res) => {
 });
 
 // ROUTES > CREATE A TIP
-router.post('/', (req, res) => {
+router.post('/', checkAuthentication, (req, res) => {
+    console.log('we came to submit a tip');
+    console.log(req.body);
     Tips.create({
         tip_title: req.body.tip_title,
         tip_detail: req.body.tip_detail,
         tip_language: req.body.tip_language,
-        userid: req.body.userid
-    })
+        userid: req.session.passport.user.id
+    } 
+    )
     .then(dbTipsData => 
-        res.render('tip', {tip: dbTipsData}))
-
-    .catch(err => {
+        {console.log(dbTipsData.get({plain:true}));
+        res.render('tip', {tip: dbTipsData.get({plain:true})})}
+        ).catch(err => {
         console.log(err);
         res.status(500).json(err);
     });
 });
 
 // ROUTES > DELETE A TIP
-router.delete('/:id', (req,res) => {
+router.delete('/:id', checkAuthentication, (req,res) => {
     Tips.destroy ({
         where: {
             id: req.params.id
@@ -162,4 +166,14 @@ router.delete('/:id', (req,res) => {
     });
 });
 
+
+function checkAuthentication(req,res,next){
+    if(req.isAuthenticated()){
+        next();
+    } else{
+        res.redirect("/login");
+    }
+  }
+
+  
 module.exports = router;

@@ -101,7 +101,7 @@ passport.deserializeUser(function (user, done) {
 
 
 router.post('/', passport.authenticate('local', {
-  successReturnToOrRedirect: '/userhome',
+  successReturnToOrRedirect: '/api/tips/',
   failureRedirect: '/login',
   failureMessage: true
 }) );
