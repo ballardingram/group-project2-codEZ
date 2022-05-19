@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee&family=Gruppo&family=Monoton&family=Roboto:wght@500&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/10c0b6b763.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+    <link rel="stylesheet" href="../stylesheets/primary.css">
+    <title>{COD}EZ Homepage</title>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar sticky-top navbar-expand-md navbar-light bg-light" id="navigation">
+        <h1 class="navbar-brand"> <span class="logo-1">{</span>COD<span class="logo-1">}</span>EZ<span class="logo-2">
+                .COMMUNITY</span></h1>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-nav ml-auto wrappers">
+                <div class="nav-item active icon home">
+                    <div class="tooltips">HOME</div>
+                    <a class="nav-link" href="./homepage.html"><span><i class="fa-solid fa-house"></i></span></a>
+                </div>
+                <div class="nav-item active icon user">
+                    <div class="tooltips">LOGIN</div>
+                    <a class="nav-link" href="./login.html"><span><i class="fa-solid fa-user"></i></span></a>
+                </div>
+            </div>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn my-2 my-sm-0" id="search-btn" type="submit"><i
+                        class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+    </nav>
+
+    <!-- Submit a Tip -->
+    <div class="container-fluid" id="tip-submit">
+        <div class="row justify-content-center">
+            <div class="col-sm-11">
+                <a href="./submit-tip.html" type="button" class="btn w-100" id="tip-form">
+                    Submit a tip here!
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter -->
+    <div class="container-fluid" id="filter">
+        <div class="row justify-content-around">
+            <div class="col-sm-11">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Filter Tips:
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">HTML</a>
+                        <a class="dropdown-item" href="#">CSS</a>
+                        <a class="dropdown-item" href="#">JS</a>
+                        <a class="dropdown-item" href="#">NODE</a>
+                        <a class="dropdown-item" href="#">MYSQL</a>
+                        <a class="dropdown-item" href="#">My Tips</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tip Cards -->
+    <div class="container-fluid">
+        <div class="row justify-content-around">
+            <!-- HTML Card -->
+            <div class="col-sm-11">
+                <div class="card mb-3">
+                    <h5 class="card-header"><i class="fa-brands fa-html5 fa-fw"></i>HTML5</h5>
+                    <div class="card-body">
+                        <h5 class="card-title"> Example Tip Submission</h5>
+                        <p class="card-text">TIP SUBMISSION PREVIEW TEXT Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.
+                        </p>
+                        <a href="/">View More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- CSS Card -->
+            <div class="col-sm-11">
+                <div class="card mb-3">
+                    <h5 class="card-header"><i class="fa-brands fa-css3 fa-fw"></i>CSS3</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">Example Tip Submission</h5>
+                        <p class="card-text">TIP SUBMISSION PREVIEW TEXT Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.
+                        </p>
+                        <a href="/">View More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Javascript Card -->
+            <div class="col-sm-11">
+                <div class="card mb-3">
+                    <h5 class="card-header"><i class="fa-brands fa-js-square fa-fw"></i>JAVASCRIPT</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">Example Tip Submission</h5>
+                        <p class="card-text">TIP SUBMISSION PREVIEW TEXT Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.
+                        </p>
+                        <a href="/">View More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Node JS Card -->
+            <div class="col-sm-11">
+                <div class="card mb-3">
+                    <h5 class="card-header"><i class="fa-brands fa-node-js fa-fw"></i>NODE JS</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">Example Tip Submission</h5>
+                        <p class="card-text">TIP SUBMISSION PREVIEW TEXT Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.
+                        </p>
+                        <a href="/">View More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- CSS Alt Card -->
+            <div class="col-sm-11">
+                <div class="card mb-3">
+                    <h5 class="card-header"><i class="fa-brands fa-css3-alt fa-fw"></i>CSS3</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">Example Tip Submission</h5>
+                        <p class="card-text">TIP SUBMISSION PREVIEW TEXT Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.
+                        </p>
+                        <a href="/">View More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="statement">
+    <h1>Your coding resource for expert advice submitted by members of the {COD}EZ.community</h1>
+  </div> -->
+
+    <!-- FOOTER -->
+
+    {{> footer}}
