@@ -15,6 +15,10 @@
   "bugs": {
     "url": "https://github.com/ballardingram/group-project2-codEZ/issues"
   },
+  "keywords": [
+    "example",
+    "heroku"
+  ],
   "homepage": "https://github.com/ballardingram/group-project2-codEZ#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
