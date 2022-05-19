@@ -33,6 +33,9 @@ The requirements for this project ask you to use the skills and technologies you
 # <a name="Concept"> Concept </a>
 By 2023, there will be over 27 Million Software Developers. That is less than 0.5% of the world's population. But, there is a need for coders. Our world is changing and there is a race to keep up with technology and client needs. In any community, the best of the best encourage and support new members by sharing best practices, discussing trial and error efforts, and answering the questions that start with "How do I...?" Whether you are new or have years of expertise, there has been a time when you thought, "how do I get this done?" If there was a place for you to search for "just the best" you would stumble upon {COD}EZ.community! The best "tips database" where users can view and submit tips they've picked up along the way. Are you faster? Smarter? Agile? Submit a tip and change the way the world codes.
 
+**Team Note**
+>The name {COD}EZ.community is designed this way to JOIN the words CODE+EASY. In some training and development environments the term EZ is a reference to a database of knowledge. Because this would be sourced from the coder community exclusively it became {COD}EZ.community.
+
 ---
 # <a name="User-Story"> User Story </a>
 **AS A** coder,
