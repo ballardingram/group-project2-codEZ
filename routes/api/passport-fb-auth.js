@@ -33,7 +33,6 @@ const fbStrategy = new Strategy({
           }
         ).then(dbUserData => {
           console.log('new federated user created with facebook provider');
-          console.log(dbUserData);
           // Don't pass federated user details. always use profile
           return cb(null, dbUserData);
         })
@@ -61,21 +60,21 @@ const fbStrategy = new Strategy({
 
 passport.use('facebook',fbStrategy);
 
-passport.serializeUser(function (profile, done) {
-  console.log('we came to store a fb session : '+JSON.stringify(profile));
-  process.nextTick(function() {
-      done(null, profile);
-  });
-});
+// passport.serializeUser(function (profile, done) {
+//   console.log('we came to store a fb session : '+JSON.stringify(profile));
+//   process.nextTick(function() {
+//       done(null, profile);
+//   });
+// });
 
 
-passport.deserializeUser(function (profile, done) {
-  console.log('we came to retrieve a fb session : ');
-  console.log(JSON.stringify(profile));
-      process.nextTick(function() {
-        done(null, profile);
-      });
-});
+// passport.deserializeUser(function (profile, done) {
+//   console.log('we came to retrieve a fb session : ');
+//   console.log(JSON.stringify(profile));
+//       process.nextTick(function() {
+//         done(null, profile);
+//       });
+// });
 
 
 

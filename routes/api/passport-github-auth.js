@@ -28,7 +28,6 @@ passport.use(new Strategy({
             }
           ).then(dbUserData => {
             console.log('new federated user created with github provider');
-            console.log(dbUserData);
             // Don't pass federated user details. always use profile
             return cb(null, dbUserData);
           })
@@ -54,21 +53,21 @@ passport.use(new Strategy({
   }
 ));
 
-passport.serializeUser(function (profile, done) {
-    console.log('we came to store a gh session : '+JSON.stringify(profile));
-    process.nextTick(function() {
-        done(null, profile);
-    });
-  });
+// passport.serializeUser(function (profile, done) {
+//     console.log('we came to store a gh session : '+JSON.stringify(profile));
+//     process.nextTick(function() {
+//         done(null, profile);
+//     });
+//   });
   
   
-  passport.deserializeUser(function (profile, done) {
-    console.log('we came to retrieve a gh session : ');
-    console.log(JSON.stringify(profile));
-        process.nextTick(function() {
-          done(null, profile);
-        });
-  });
+//   passport.deserializeUser(function (profile, done) {
+//     console.log('we came to retrieve a gh session : ');
+//     console.log(JSON.stringify(profile));
+//         process.nextTick(function() {
+//           done(null, profile);
+//         });
+//   });
 
   
 router.get('/github',
