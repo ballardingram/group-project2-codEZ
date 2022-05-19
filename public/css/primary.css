@@ -3,8 +3,6 @@ font-family: 'Gruppo', cursive;
 font-family: 'Monoton', cursive;
 font-family: 'Roboto', sans-serif; */
 
-/* --electricBlue: #4831d4; */
-
 :root {
   --primary: #152069;
   --secondary: #3cba54;
@@ -59,7 +57,7 @@ body {
   position: relative;
 }
 
-.user {
+.logout {
   padding-right: 12px;
 }
 
@@ -95,7 +93,7 @@ body {
   position: absolute;
   bottom: 0px;
   background: white;
-  font-size: 18px;
+  font-size: 16px;
   padding: 6px 12px;
   border-radius: 15px;
   color: white;
@@ -136,6 +134,12 @@ body {
   background: var(--secondary);
 }
 
+.wrappers .logout:hover span,
+.wrappers .logout:hover .tooltips,
+.wrappers .logout:hover .tooltips:before {
+  background: var(--secondary);
+}
+
 #search-btn {
   color: white;
   background-color: var(--primary);
@@ -152,9 +156,12 @@ body {
 #tip-form {
   color: white;
   background-color: var(--primary);
+  font-size: 18px;
   border: none;
   margin-top: 50px;
   margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #tip-form:hover {
@@ -163,6 +170,10 @@ body {
 
 #filter {
   margin-bottom: 5px;
+}
+
+.card {
+  background-color: #e2e2e2;
 }
 
 .fa-html5 {
@@ -189,7 +200,7 @@ body {
 
 /* Body FORM pages START */
 #form-container {
-  margin-top: 35px;
+  margin-top: 30px;
 }
 
 .si-btn {
@@ -202,6 +213,16 @@ body {
   background-color: black;
 }
 
+.mt-btn {
+  color: white;
+  background-color: var(--primary);
+  border: none;
+  border-radius: 5px;
+}
+.mt-btn:hover {
+  color: white;
+  background-color: black;
+}
 .fb-btn {
   color: white;
   background-color: #4267b2;
@@ -242,4 +263,3 @@ body {
   background-color: black;
 }
 /* Body of Homepage END */
-

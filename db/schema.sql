@@ -19,3 +19,10 @@ CREATE TABLE tips (
     tip_language VARCHAR (30) NOT NULL,
     username VARCHAR (30) REFERENCES users(username) ON DELETE SET NULL
 );
+
+CREATE TABLE federate_users (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    provider varchar(50) NOT NULL,
+    subject varchar(30) UNIQUE NOT NULL,
+    email VARCHAR (50) UNIQUE NOT NULL
+);

@@ -1,0 +1,54 @@
+{{> header }}
+      <!-- Submit a Tip -->
+    <div class="container-fluid" id="tip-submit">
+        <div class="row justify-content-center">
+            <div class="col-sm-11">
+                <a href="/submit-tip" type="button" class="btn w-100" id="tip-form">
+                    Submit a tip here!
+                </a>
+            </div>
+        </div>
+    </div>
+ <!-- Filter -->
+    <div class="container-fluid" id="filter">
+        <div class="row justify-content-around">
+            <div class="col-sm-11">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Filter Tips:
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">HTML</a>
+                        <a class="dropdown-item" href="#">CSS</a>
+                        <a class="dropdown-item" href="#">JS</a>
+                        <a class="dropdown-item" href="#">NODE</a>
+                        <a class="dropdown-item" href="#">MYSQL</a>
+                        <a class="dropdown-item" href="#">My Tips</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Tip Cards -->
+    <div class="container-fluid">
+        <div class="row justify-content-around">
+    {{#if tips}}
+         {{#each tips}}
+            <div class="col-sm-11">
+                <div class="card mb-3">
+                    <h5 class="card-header"><i class="fa-brands fa-{{this.tip_language}} fa-fw"></i>{{this.tip_language}}</h5>
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="/api/tips/{{this.id}}"> {{this.tip_title}}</a></a></h5>
+                        <p class="card-text">{{this.tip_detail}}
+                        </p>
+                        <a href="/api/tips/{{this.id}}"> View More</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+    {{/if}}
+    </div>
+    </div> 
+
+{{> footer }}

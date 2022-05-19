@@ -25,11 +25,11 @@
       <div class="navbar-nav ml-auto wrappers">
         <div class="nav-item active icon home">
           <div class="tooltips">HOME</div>
-          <a class="nav-link" href="./homepage.html"><span><i class="fa-solid fa-house"></i></span></a>
+          <a class="nav-link" href="/"><span><i class="fa-solid fa-house"></i></span></a>
         </div>
         <div class="nav-item active icon user">
           <div class="tooltips">LOGIN</div>
-          <a class="nav-link" href="./login.html"><span><i class="fa-solid fa-user"></i></span></a>
+          <a class="nav-link" href="/account"><span><i class="fa-solid fa-user"></i></span></a>
         </div>
       </div>
       <form class="form-inline my-2 my-lg-0">
@@ -43,23 +43,35 @@
   <div class="container" id="form-container">
     <div class="row justify-content-center">
       <div class="col-lg-8">
-        <h2>My Account</h2>
+        <div class="row justify-content-between">
+          <h2 class="col-lg-4">My Account</h2>
+          <button type="button" class="btn btn-block si-btn col-lg-3 mt-1 mb-1 mr-3 ml-3">View 'My Tips'</button>
+        </div>
         <hr>
         <h4 class="mb-3">Personal Information</h4>
         <form action="/api/auth" method="post" enctype="application/x-www-form-urlencoded">
-          <div class="form-outline mb-4">
+
+          <div class="form-outline mb-3">
+            <label class="form-label" for="firstname">First Name</label>
+            <input type="text" id="firstname" class="form-control" placeholder="Jane" name="firstname" />
+          </div>
+          <div class="form-outline mb-3">
+            <label class="form-label" for="lastname">Last Name</label>
+            <input type="text" id="lastname" class="form-control" placeholder="Doe" name="lastname"/>
+          </div>
+          <div class="form-outline mb-3">
             <label class="form-label" for="username">User Name</label>
-            <input type="password" id="username" class="form-control" placeholder="JaneD0e" name="username" />
+            <input type="text" id="username" class="form-control" placeholder="JaneD0e" name="username" disabled/>
           </div>
-          <div class="form-outline mb-4">
-            <label class="form-label" for="email">Email Address</label>
-            <input type="password" id="email" class="form-control" placeholder="janedoe@gmail.com" name="email"/>
+          <div class="form-outline mb-3">
+            <label class="form-label" for="email">Email</label>
+            <input type="email" id="email" class="form-control" placeholder="janed0e@gmail.com" name="email" disabled/>
           </div>
-          <div class="form-outline mb-4">
+          <div class="form-outline mb-3">
             <label class="form-label" for="password">Password</label>
             <input type="password" id="password" class="form-control" placeholder="**********" name="password"/>
           </div>
-          <div class="form-outline mb-4">
+          <div class="form-outline mb-3">
             <label class="form-label" for="confirm-password">Confirm Password</label>
             <input type="password" id="confirm-password" class="form-control" placeholder="**********" />
           </div>
@@ -68,10 +80,6 @@
         <form action="/api/auth" method="delete" enctype="application/x-www-form-urlencoded">
           <button type="button" class="btn btn-block mb-4 delete-btn">Delete Account</button>
         </form>
-        <div class="text-center">
-          <p>or:</p>
-          <button type="button" class="btn btn-block mb-4 si-btn">View 'My Tips'</button>
-        </div>
         <hr>
       </div>
     </div>
@@ -81,10 +89,10 @@
   <div class="container mt-5">
     <nav class="navbar navbar-expand navbar-dark bg-dark fixed-bottom justify-content-center" id="navigation">
       <div class="navbar-nav text-center">
-        <a class="nav-item nav-link" href="./account.html">My Account<span class="sr-only">(My Account)</span></a>
-        <a class="nav-item nav-link" href="./privacy-policy.html">Privacy Policy<span class="sr-only">(Privacy Policy)</span></a>
-        <a class="nav-item nav-link" href="./terms-of-service.html">Terms of Use<span class="sr-only">(Terms of Use)</span></a>
-        <a class="nav-item nav-link" href="./homepage.html">&copy2022 TeamVeggie<span class="sr-only">(Home Page)</a>
+        <a class="nav-item nav-link" href="/account">My Account<span class="sr-only">(My Account)</span></a>
+        <a class="nav-item nav-link" href="/privacy-policy">Privacy Policy<span class="sr-only">(Privacy Policy)</span></a>
+        <a class="nav-item nav-link" href="/terms-of-service">Terms of Use<span class="sr-only">(Terms of Use)</span></a>
+        <a class="nav-item nav-link" href="/">&copy2022 TeamVeggie<span class="sr-only">(Home Page)</a>
       </div>
     </nav>
   </div>

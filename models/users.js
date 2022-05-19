@@ -14,14 +14,17 @@ User.init(
     {
         id: {
             type: DataTypes.INTEGER,
-            allowNUll: false,
+            allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
-        username: {
+        first_name: {
             type: DataTypes.STRING,
-            allowNull: false,
-            unique: true
+            allowNull: true,
+        },
+        last_name: {
+            type: DataTypes.STRING,
+            allowNull: true
         },
         email: {
             type: DataTypes.STRING,
@@ -31,25 +34,19 @@ User.init(
                 isEmail: true
             }
         },
-        password: {
+        provider: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                len: [8]
-            }
-        }
+            unique: false 
+        },
+        paranoid: {
+            type: DataTypes.BOOLEAN,
+            
+            unique: false ,
+            default: false
+        },
     },
     {
-        hooks: {
-            async beforeCreate(newUserData) {
-                newUserData.password = await bcrypt.hash(newUserData.password, 10);
-                return newUserData;
-            },
-            async beforeUpdate(updatedUserData) {
-                updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
-                return updatedUserData;
-            }
-        },
         sequelize,
         timestamps: false,
         freezeTableName: true,

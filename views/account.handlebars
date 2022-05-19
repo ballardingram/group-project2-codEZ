@@ -1,0 +1,53 @@
+{{> header }}
+<!-- Account Form -->
+  <div class="container" id="form-container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="row justify-content-between">
+          <h2 class="col-lg-4">My Account</h2>
+
+          <form action="/api/tips/usertips/{{user.id}}" method="get" enctype="application/x-www-form-urlencoded" class="col-lg-4">
+            <button type="submit" class="mt-btn pt-2 pb-2 mt-2 w-100">View 'My Tips'</button>
+          </form>
+        </div>
+        <hr>
+        <h4 class="mb-3">Personal Information</h4>
+        <form action="/api/users/{{user.id}}" method="post" enctype="application/x-www-form-urlencoded">
+
+          <div class="form-outline mb-3">
+            <label class="form-label" for="firstname">First Name </label>
+            <input type="text" id="firstname" class="form-control" placeholder={{user.first_name}} value={{user.first_name}} name="firstname" />
+          </div>
+          <div class="form-outline mb-3">
+            <label class="form-label" for="lastname">Last Name</label>
+            <input type="text" id="lastname" class="form-control" placeholder={{user.last_name}} value={{user.last_name}} name="lastname"/>
+          </div>
+          <div class="form-outline mb-3">
+            <label class="form-label" for="email">Email</label>
+            <input type="email" id="email" class="form-control" placeholder={{user.email}} value={{user.email}}  name="email" disabled/>
+          </div>
+
+          {{#if user.username}}
+          <div class="form-outline mb-3">
+            <label class="form-label" for="username">User Name</label>
+            <input type="text" id="username" class="form-control" value={{user.username}} placeholder={{user.username}}   name="username" disabled/>
+          </div>
+          <div class="form-outline mb-3">
+            <label class="form-label" for="password">Password</label>
+            <input type="password" id="password" class="form-control" placeholder="**********" name="password"/>
+          </div>
+          <div class="form-outline mb-3">
+            <label class="form-label" for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" class="form-control" placeholder="**********" />
+          </div>
+           {{/if}}
+          <button type="submit" class="btn btn-block mb-4 update-btn">Update Account</button>
+        </form>
+        <form action="/api/auth" method="delete" enctype="application/x-www-form-urlencoded">
+          <button type="button" class="btn btn-block mb-4 delete-btn">Delete Account</button>
+        </form>
+        <hr>
+      </div>
+    </div>
+  </div>
+{{> footer }}

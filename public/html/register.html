@@ -15,36 +15,44 @@
 </head>
 
 <body>
-  <!-- Navigation -->
-  <nav class="navbar sticky-top navbar-expand-md navbar-light bg-light">
-    <h1 class="navbar-brand"> <span class="logo-1">{</span>COD<span class="logo-1">}</span>EZ<span class="logo-2"> .community</span></h1>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <div class="navbar-nav ml-auto wrappers">
-        <div class="nav-item active icon home">
-          <div class="tooltips">HOME</div>
-          <a class="nav-link" href="./homepage.html"><span><i class="fa-solid fa-house"></i></span></a>
-        </div>
-        <div class="nav-item active icon user">
-          <div class="tooltips">LOGIN</div>
-          <a class="nav-link" href="./login.html"><span><i class="fa-solid fa-user"></i></span></a>
-        </div>
+ <!-- Navigation -->
+ <nav class="navbar sticky-top navbar-expand-md navbar-light bg-light">
+  <h1 class="navbar-brand"> <span class="logo-1">{</span>COD<span class="logo-1">}</span>EZ<span class="logo-2"> .community</span></h1>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="navbar-nav ml-auto wrappers">
+      <div class="nav-item active icon home">
+        <div class="tooltips">HOME</div>
+        <a class="nav-link" href="/"><span><i class="fa-solid fa-house"></i></span></a>
       </div>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn my-2 my-sm-0" id="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-      </form>
+      <div class="nav-item active icon user">
+        <div class="tooltips">LOGIN</div>
+        <a class="nav-link" href="/account"><span><i class="fa-solid fa-user"></i></span></a>
+      </div>
     </div>
-  </nav>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn my-2 my-sm-0" id="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+  </div>
+</nav>
 
   <div class="container" id="form-container">
     <div class="row justify-content-center">
       <div class="col-xl-6 col-lg-8 col-md-9 col-sm-11">
         <h2>Register</h2>
         <hr>
-        <form action="/api/auth" method="post" enctype="application/x-www-form-urlencoded">
+        <form action="/api/auth/signup" method="post" enctype="application/x-www-form-urlencoded">
+          <div class="form-outline mb-4">
+            <label class="form-label" for="firstname">First Name *</label>
+            <input type="text" class="form-control" id="firstname" name="firstname"/>
+          </div>
+          <div class="form-outline mb-4">
+            <label class="form-label" for="lastname">Last Name *</label>
+            <input type="text" class="form-control" id="lastname" name="lastname"/>
+          </div>
           <div class="form-outline mb-4">
             <label class="form-label" for="username">User Name *</label>
             <input type="text" class="form-control" id="username" name="username"/>
@@ -68,17 +76,6 @@
           <button type="submit" class="btn btn-block mb-4 si-btn">Create my Account</button>
         </form>
         <div class="text-center">
-          <p>or:</p>
-          <form action="/api/fbauth/loginfacebook" method="post" enctype="application/x-www-form-urlencoded">
-            <button type="submit" class="btn btn-block mb-4 fb-btn">
-              <i class="fab fa-facebook-f"></i>  Sign up with Facebook
-            </button>
-          </form>
-          <form action="/api/ghauth/github" method="post" enctype="application/x-www-form-urlencoded">
-            <button type="submit" class="btn btn-block mb-4 gh-btn">
-              <i class="fab fa-github"></i></i>  Sign up with GitHub
-            </button>
-          </form>
           <p>Already a member? <a href="./login.html">Login Here</a></p>
         </div>
         <hr>
@@ -90,10 +87,10 @@
   <div class="container mt-5">
     <nav class="navbar navbar-expand navbar-dark bg-dark fixed-bottom justify-content-center" id="navigation">
       <div class="navbar-nav text-center">
-        <a class="nav-item nav-link" href="./account.html">My Account<span class="sr-only">(My Account)</span></a>
-        <a class="nav-item nav-link" href="./privacy-policy.html">Privacy Policy<span class="sr-only">(Privacy Policy)</span></a>
-        <a class="nav-item nav-link" href="./terms-of-service.html">Terms of Use<span class="sr-only">(Terms of Use)</span></a>
-        <a class="nav-item nav-link" href="./homepage.html">&copy2022 TeamVeggie<span class="sr-only">(Home Page)</a>
+        <a class="nav-item nav-link" href="/account">My Account<span class="sr-only">(My Account)</span></a>
+        <a class="nav-item nav-link" href="/privacy-policy">Privacy Policy<span class="sr-only">(Privacy Policy)</span></a>
+        <a class="nav-item nav-link" href="/terms-of-service">Terms of Use<span class="sr-only">(Terms of Use)</span></a>
+        <a class="nav-item nav-link" href="/">&copy2022 TeamVeggie<span class="sr-only">(Home Page)</a>
       </div>
     </nav>
   </div>
