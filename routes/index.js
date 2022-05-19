@@ -34,7 +34,8 @@ router.get('/userhome', checkAuthentication,  (req,res) => {
 
 router.get('/usertips', checkAuthentication,  (req,res) => {
   console.log("sending user tips page");
-  res.sendFile(path.join(__dirname, '../public/html', 'mytips.html'));
+  // res.sendFile(path.join(__dirname, '../public/html', 'mytips.html'));
+  res.render('usertips')
 });
 
 router.get('/account',checkAuthentication,  (req,res) => {
