@@ -23,6 +23,7 @@ passport.use('local', new LocalStrategy(
               return cb(null, false, { message: 'USER_NOT_FOUND' });
           }
           if (username ==dbuser['username'] && await bcrypt.compare(password, dbuser['password'])) {
+            console.log('user authenticated');
               let user = dbuser['dataValues']['user']['dataValues'];
               user.username = dbuser['username'];
               return cb(null, user);
@@ -71,7 +72,6 @@ passwordField: 'password', passReqToCallback: true},
             let user = dbUserData['dataValues'];
             user.username = username;
             return cb(null, user);
-            
           }
       )
     .catch(err => {
