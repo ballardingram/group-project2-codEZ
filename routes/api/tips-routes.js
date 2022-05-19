@@ -13,6 +13,9 @@ router.get('/', (req, res) => {
                 attributes: ['id', 'first_name','last_name', 'email']
             }
         ],
+        order: [
+            ['id', 'DESC']
+        ],
         raw: true,
         nest: true,
     })
@@ -75,6 +78,9 @@ router.get('/usertips/:userid',checkAuthentication, (req, res) => {
                 model: User,
                 attributes: ['id', 'first_name','last_name', 'email']
             }
+        ],
+        order: [
+            ['id', 'DESC']
         ],
         where : {
             userid : req.params.userid
