@@ -12,9 +12,13 @@ router.get('/', (req, res) => {
                 model: User,
                 attributes: ['id', 'first_name','last_name', 'email']
             }
-        ]
+        ],
+        raw: true,
+        nest: true,
     })
-    .then(dbTipsData => res.json(dbTipsData))
+    .then(dbTipsData => {
+        res.render('tips', {tips: dbTipsData});
+    })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -46,14 +50,16 @@ router.get('/language/:name', (req, res) => {
         ],
         where : {
             tip_language : req.params.name
-        }        
+        }  ,
+        raw: true,
+        nest: true,      
     }
     ).then(dbTipsData => {
         if (!dbTipsData) {
             res.status(404).json({message: 'No tip found with this title.'});
             return;
         }
-        res.json(dbTipsData);
+        res.render('languagetips', {tips: dbTipsData});
     })
     .catch(err => {
         console.log(err);
@@ -72,14 +78,16 @@ router.get('/usertips/:userid', (req, res) => {
         ],
         where : {
             userid : req.params.userid
-        }        
+        }    ,
+        raw: true,
+        nest: true,     
     }
     ).then(dbTipsData => {
         if (!dbTipsData) {
             res.status(404).json({message: 'No tip found with this title.'});
             return;
         }
-        res.json(dbTipsData);
+        res.render('usertips', {tips:dbTipsData});
     })
     .catch(err => {
         console.log(err);
@@ -91,13 +99,15 @@ router.get('/usertips/:userid', (req, res) => {
 router.get('/:id', (req, res) => {
     Tips.findOne({
         where: {
-            tip_title: req.params.id
+            id: req.params.id
         },include: [
             {
                 model: User,
                 attributes: ['id', 'first_name','last_name', 'email']
             }
-        ],
+        ] ,
+        raw: true,
+        nest: true, 
         attributes: ['id', 'tip_title', 'tip_detail', 'tip_language', 'userid'],
         order: ['tip_language', 'tip_title', 'tip_detail', 'userid'],
         
@@ -107,7 +117,7 @@ router.get('/:id', (req, res) => {
             res.status(404).json({message: 'No tip found with this title.'});
             return;
         }
-        res.json(dbTipsData);
+        res.render('tip', {tip: dbTipsData});
     })
     .catch(err => {
         console.log(err);
@@ -118,13 +128,14 @@ router.get('/:id', (req, res) => {
 // ROUTES > CREATE A TIP
 router.post('/', (req, res) => {
     Tips.create({
-        id: req.body.id,
         tip_title: req.body.tip_title,
         tip_detail: req.body.tip_detail,
         tip_language: req.body.tip_language,
         userid: req.body.userid
     })
-    .then(dbTipsData => res.json(dbTipsData))
+    .then(dbTipsData => 
+        res.render('tip', {tip: dbTipsData}))
+
     .catch(err => {
         console.log(err);
         res.status(500).json(err);

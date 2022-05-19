@@ -8,7 +8,7 @@ const router = require('express').Router();
 passport.use('local', new LocalStrategy(
   (username, password, cb) => {
       console.log("we are validateing user : " + Date.now());
-      UserAccount .findOne({
+      UserAccount.findOne({
           where: {
               username: username
           },
@@ -23,8 +23,8 @@ passport.use('local', new LocalStrategy(
               return cb(null, false, { message: 'USER_NOT_FOUND' });
           }
           if (username ==dbuser['username'] && await bcrypt.compare(password, dbuser['password'])) {
-            console.log('User authenticated');
-              let user = dbuser['dataValues']['user'];
+              let user = dbuser['dataValues']['user']['dataValues'];
+              user.username = dbuser['username'];
               return cb(null, user);
           }
           else {
@@ -44,8 +44,8 @@ passwordField: 'password', passReqToCallback: true},
       console.log("we are registering a user : " + Date.now());
       User.create({
         email: req.body.email,
-        firstname: req.body.firstname,
-        lastname: req.body.lastname,
+        first_name: req.body.firstname,
+        last_name: req.body.lastname,
         provider: 'codez',
         paranoid: false
     })
@@ -58,7 +58,8 @@ passwordField: 'password', passReqToCallback: true},
             else{
               UserAccount.create({
                 username: username,
-                password: password
+                password: password,
+                userid: dbUserData['id']
               }).then( dbUserAccountData => {
                 if(!dbUserAccountData){
                   console.error('internal db failure while creating user: '+err);
@@ -67,7 +68,9 @@ passwordField: 'password', passReqToCallback: true},
                 }
               })
             }
-            return cb(null, dbUserData);
+            let user = dbUserData['dataValues'];
+            user.username = username;
+            return cb(null, user);
             
           }
       )

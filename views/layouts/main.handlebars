@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +8,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Gruppo&family=Monoton&family=Roboto:wght@500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Gruppo&family=Monoton&family=Roboto:wght@500&display=swap"
+    rel="stylesheet">
   <script src="https://kit.fontawesome.com/10c0b6b763.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
   <link rel="stylesheet" href="../stylesheets/primary.css">
   <title>{COD}EZ Homepage</title>
 </head>
 
 <body>
   <!-- Navigation -->
-  <nav class="navbar sticky-top navbar-expand-md navbar-light bg-light" id="navigation">
-    <h1 class="navbar-brand"> <span class="logo-1">{</span>COD<span class="logo-1">}</span>EZ<span class="logo-2"> .COMMUNITY</span></h1>
+  <nav class="navbar sticky-top navbar-expand-md navbar-light bg-light" id="header-nav">
+    <h1 class="navbar-brand"> <span class="logo-1">{</span>COD<span class="logo-1">}</span>EZ<span class="logo-2"> .community</span></h1>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -25,11 +29,15 @@
       <div class="navbar-nav ml-auto wrappers">
         <div class="nav-item active icon home">
           <div class="tooltips">HOME</div>
-          <a class="nav-link" href="./homepage.html"><span><i class="fa-solid fa-house"></i></span></a>
+          <a class="nav-link" href="/"><span><i class="fa-solid fa-house"></i></span></a>
         </div>
         <div class="nav-item active icon user">
-          <div class="tooltips">LOGIN</div>
-          <a class="nav-link" href="./login.html"><span><i class="fa-solid fa-user"></i></span></a>
+          <div class="tooltips">ACCOUNT</div>
+          <a class="nav-link" href="/account"><span><i class="fa-solid fa-user"></i></span></a>
+        </div>
+        <div class="nav-item active icon logout">
+          <div class="tooltips">LOGOUT</div>
+          <a class="nav-link" href="/logout"><span><i class="fa-solid fa-right-from-bracket"></i></span></a>
         </div>
       </div>
       <form class="form-inline my-2 my-lg-0">
@@ -38,20 +46,23 @@
       </form>
     </div>
   </nav>
-
+  
   {{{ body }}}
 
   <!-- FOOTER -->
   <div class="container mt-5">
     <nav class="navbar navbar-expand navbar-dark bg-dark fixed-bottom justify-content-center" id="navigation">
       <div class="navbar-nav text-center">
-        <a class="nav-item nav-link" href="./account.html">My Account<span class="sr-only">(My Account)</span></a>
-        <a class="nav-item nav-link" href="./privacy-policy.html">Privacy Policy<span class="sr-only">(Privacy Policy)</span></a>
-        <a class="nav-item nav-link" href="./terms-of-service.html">Terms of Use<span class="sr-only">(Terms of Use)</span></a>
-        <a class="nav-item nav-link" href="./homepage.html">&copy2022 TeamVeggie<span class="sr-only">(Home Page)</a>
+        <a class="nav-item nav-link" href="/account">My Account<span class="sr-only">(My Account)</span></a>
+        <a class="nav-item nav-link" href="/privacy-policy">Privacy Policy<span class="sr-only">(Privacy
+            Policy)</span></a>
+        <a class="nav-item nav-link" href="/terms-of-service">Terms of Use<span class="sr-only">(Terms of
+            Use)</span></a>
+        <a class="nav-item nav-link" href="/">&copy2022 TeamVeggie<span class="sr-only">(Home Page)</a>
       </div>
     </nav>
   </div>
 
 </body>
+
 </html>
