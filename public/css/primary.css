@@ -213,6 +213,16 @@ body {
   background-color: black;
 }
 
+.mt-btn {
+  color: white;
+  background-color: var(--primary);
+  border: none;
+  border-radius: 5px;
+}
+.mt-btn:hover {
+  color: white;
+  background-color: black;
+}
 .fb-btn {
   color: white;
   background-color: #4267b2;
