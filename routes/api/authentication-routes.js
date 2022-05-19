@@ -44,8 +44,8 @@ passwordField: 'password', passReqToCallback: true},
       console.log("we are registering a user : " + Date.now());
       User.create({
         email: req.body.email,
-        firstname: req.body.firstname,
-        lastname: req.body.lastname,
+        first_name: req.body.firstname,
+        last_name: req.body.lastname,
         provider: 'codez',
         paranoid: false
     })
@@ -67,7 +67,9 @@ passwordField: 'password', passReqToCallback: true},
                 }
               })
             }
-            return cb(null, dbUserData);
+            let user = dbUserData['dataValues'];
+            user.username = username;
+            return cb(null, user);
             
           }
       )
