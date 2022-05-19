@@ -21,8 +21,8 @@ This is our second group project for Challenge 16: Interactive Full-Stack Projec
 
 # <a name="Authors"> Authors </a>
 - [Cassandra Hardin](https://github.com/cassdoes)
-- Ramu Makkena
-- Shuan Lim
+- [Ramu Makkena](https://github.com/ramumakkena)
+- [Shuan Lim](https://github.com/shuanlim)
 - [Ballard Ingram](https://github.com/ballardingram)
 
 ---
