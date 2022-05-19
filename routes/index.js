@@ -8,7 +8,7 @@ router.use('/api', apiRoutes);
 //Default home page
 router.get('/',(req, res) => {
   // res.sendFile(path.join(__dirname, '../public/html', 'homepage.html'));
-  res.render('index');
+  res.redirect('/api/tips')
 });
 
 // Supplying login page
@@ -23,13 +23,13 @@ router.get('/login', (req,res) => {
 
 router.get('/submittip',checkAuthentication,  (req,res) => {
   console.log("sending user account page");
-  res.sendFile(path.join(__dirname, '../public/html', 'submit-tip.html'));
+  // res.sendFile(path.join(__dirname, '../public/html', 'submit-tip.html'));
+  res.render('submittip')
 });
 
 router.get('/userhome', checkAuthentication,  (req,res) => {
   console.log("sending user home page");
-  res.sendFile(path.join(__dirname, '../public/html', 'homepage.html'));
-  
+  res.redirect('/api/tips/usertips/'+req.session.passport.user.id);
 });
 
 router.get('/usertips', checkAuthentication,  (req,res) => {
@@ -46,7 +46,8 @@ router.get('/account',checkAuthentication,  (req,res) => {
 
 router.get('/submit-tip', checkAuthentication, (req,res) => {
   console.log("sending user account page");
-  res.sendFile(path.join(__dirname, '../public/html', 'submit-tip.html'));
+  // res.sendFile(path.join(__dirname, '../public/html', 'submit-tip.html'));
+  res.render('submittip');
 });
 
 /** Routes not required to have authentication */

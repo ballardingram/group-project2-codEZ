@@ -6,31 +6,17 @@ const exphbs = require('express-handlebars');
 var path = require('path');
 
 const app = express();
-const hbs = exphbs.create({});
+app.use('/public',express.static(path.join(__dirname, './public')));
+
+const hbs = exphbs.create({defaultLayout: 'main'});
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-
-
-// Routing 
-
-// // Index Template
-// app.get('/', (req, res) => {
-//   res.render('index');
-// });
-
-// // Homepage
-// app.get('/', (req, res) => {
-//   res.render('homepage');
-// });
-
-// Tips
-// app.get('/', (req, res) => {
-//   res.render('tips');
-// });
+app.set('views', './views');
 
 
 
-app.use(express.static(path.join(__dirname, 'public')));
+
+
 var cookieParser = require('cookie-parser');
 const session = require('express-session');
 var SequelizeStore = require("connect-session-sequelize")(session.Store);

@@ -1,0 +1,43 @@
+ {{> header }}
+ <!-- Submit Tip Form -->
+  <div class="container" id="form-container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h1>Submission Form</h1>
+        <hr>
+        <h2>Guidelines</h2>
+        <ul>
+          <li>All submissions must be your original work.</li>
+          <li>All submissions must be in English.</li>
+          <li>Submissions are not anonymous and will be associated with your profile and username</li>
+        </ul>
+
+        <!-- Dropdown for languages -->
+        <!-- Textarea for submission -->
+
+        <form action="/api/tips/" method="post" enctype="application/x-www-form-urlencoded">
+
+          <div class="form-outline mb-4">
+            <label class="form-label mt-2" for="tip-language">Language *</label>
+            <input type="text" id="tip-language" class="form-control" name="tip_language"/>
+          </div>
+
+          <div class="form-outline mb-4">
+            <label class="form-label mt-2" for="tip-title">Tip Title *</label>
+            <input type="text" id="tip-title" class="form-control" name="tip_title"/>
+          </div>
+
+          <div class="form-outline">
+            <label class="form-label mt-2" for="tip-details">Tip Details *</label>
+            <textarea name="tip_detail" id="tip-details" class="form-control" rows="6"></textarea>
+          </div>
+        
+
+          <button type="submit" class="btn btn-block mb-4" id="tip-form">Submit Tip</button>
+        </form>
+        <hr>
+      </div>
+    </div>
+  </div>
+
+  {{> footer }}
