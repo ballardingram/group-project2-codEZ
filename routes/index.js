@@ -6,9 +6,9 @@ router.use('/api', apiRoutes);
 
 
 //Default home page
-router.get('/',(req, res) => {
+router.get('/homepage',(req, res) => {
   // res.sendFile(path.join(__dirname, '../public/html', 'homepage.html'));
-  res.render('index');
+  res.render('homepage')
 });
 
 // Supplying login page
@@ -23,12 +23,13 @@ router.get('/login', (req,res) => {
 
 router.get('/submittip',checkAuthentication,  (req,res) => {
   console.log("sending user account page");
-  res.sendFile(path.join(__dirname, '../public/html', 'submit-tip.html'));
+  // res.sendFile(path.join(__dirname, '../views/', 'submit-tip.handlebars'));
+  res.render('submittips, ');
 });
 
 router.get('/userhome', checkAuthentication,  (req,res) => {
   console.log("sending user home page");
-  res.sendFile(path.join(__dirname, '../public/html', 'homepage.html'));
+  // res.sendFile(path.join(__dirname, '../public/html', 'homepage.html'));
   
 });
 
@@ -47,7 +48,7 @@ router.get('/account',checkAuthentication,  (req,res) => {
 
 router.get('/submit-tip', checkAuthentication, (req,res) => {
   console.log("sending user account page");
-  res.sendFile(path.join(__dirname, '../public/html', 'submit-tip.html'));
+  // res.sendFile(path.join(__dirname, '../public/html', 'submit-tip.html'));
   res.render('submit-tip')
 });
 
@@ -55,13 +56,15 @@ router.get('/submit-tip', checkAuthentication, (req,res) => {
 
 router.get('/privacy-policy',  (req,res) => {
   console.log("sending user account page");
-  res.sendFile(path.join(__dirname, '../public/html', 'privacy-policy.html'));
+  // res.sendFile(path.join(__dirname, '../public/html', 'privacy-policy.html'));
+  res.render('privacy-policy')
 });
 
 
 router.get('/terms-of-service',  (req,res) => {
   console.log("sending user account page");
-  res.sendFile(path.join(__dirname, '../public/html', 'terms-of-service.html'));
+  // res.sendFile(path.join(__dirname, '../public/html', 'terms-of-service.html'));
+  res.render('terms-of-service')
 });
 
 router.get('/register',(req,res) => {
