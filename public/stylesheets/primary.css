@@ -3,8 +3,6 @@ font-family: 'Gruppo', cursive;
 font-family: 'Monoton', cursive;
 font-family: 'Roboto', sans-serif; */
 
-/* --electricBlue: #4831d4; */
-
 :root {
   --primary: #152069;
   --secondary: #3cba54;
@@ -95,7 +93,7 @@ body {
   position: absolute;
   bottom: 0px;
   background: white;
-  font-size: 18px;
+  font-size: 16px;
   padding: 6px 12px;
   border-radius: 15px;
   color: white;
@@ -158,9 +156,12 @@ body {
 #tip-form {
   color: white;
   background-color: var(--primary);
+  font-size: 18px;
   border: none;
   margin-top: 50px;
   margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #tip-form:hover {
@@ -169,6 +170,10 @@ body {
 
 #filter {
   margin-bottom: 5px;
+}
+
+.card {
+  background-color: #e2e2e2;
 }
 
 .fa-html5 {
@@ -195,7 +200,7 @@ body {
 
 /* Body FORM pages START */
 #form-container {
-  margin-top: 35px;
+  margin-top: 30px;
 }
 
 .si-btn {
