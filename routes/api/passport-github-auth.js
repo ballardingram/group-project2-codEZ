@@ -1,7 +1,7 @@
 const passport = require('passport')
 const Strategy = require('passport-github2')
 const router = require('express').Router();
-const { FederatedUser } = require('../../models');
+const { User } = require('../../models');
 const path = require('path');
 
 passport.use(new Strategy({
@@ -11,7 +11,9 @@ passport.use(new Strategy({
     callbackURL: process.env['GH_CALLBACK']
   },
   function(accessToken, refreshToken, profile, cb) {
-    FederatedUser.findOne({
+    console.log('FB Profile ')
+    console.log(profile);
+    User.findOne({
         where: {
           email: profile.emails[0].value,
           provider: 'github'
@@ -19,7 +21,7 @@ passport.use(new Strategy({
       }).then( dbUserData => {
         if (!dbUserData) {
           console.log('No User found with email, creating a new federated user');
-          FederatedUser.create(
+          User.create(
             {
               provider: 'github',
               email: profile.emails[0].value
@@ -28,7 +30,7 @@ passport.use(new Strategy({
             console.log('new federated user created with github provider');
             console.log(dbUserData);
             // Don't pass federated user details. always use profile
-            return cb(null, profile);
+            return cb(null, dbUserData);
           })
             .catch(err => {
               console.log(err);
@@ -39,7 +41,7 @@ passport.use(new Strategy({
         if (dbUserData['provider'] == 'github' && dbUserData['email'] == profile.emails[0].value) {
           console.log('user found in federated users list with provider');
           // Don't pass federated user details. always use profile
-          return cb(null, profile);
+          return cb(null, dbUserData);
         } else {
           console.log('user found with email but provider not matching');
           return cb(null, false, { message: 'EMAIL_EXISTS_WITH_DIFFERENT_PROVIDER' });
