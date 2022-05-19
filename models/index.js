@@ -17,7 +17,7 @@ User.hasMany(Tips, {
 
 // RELATION > TIP TO USER - ONE TO ONE
 Tips.belongsTo(User, {
-    foreignKey: 'userid',
+    foreignKey: 'userid'
 });
 
-module.exports = { User, Tips, FederatedUser, UserAccount};
+module.exports = { User, Tips, UserAccount};

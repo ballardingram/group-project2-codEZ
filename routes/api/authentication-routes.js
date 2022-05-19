@@ -58,7 +58,8 @@ passwordField: 'password', passReqToCallback: true},
             else{
               UserAccount.create({
                 username: username,
-                password: password
+                password: password,
+                userid: dbUserData['id']
               }).then( dbUserAccountData => {
                 if(!dbUserAccountData){
                   console.error('internal db failure while creating user: '+err);
