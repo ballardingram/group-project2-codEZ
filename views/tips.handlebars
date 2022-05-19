@@ -1,0 +1,18 @@
+<ol class="tips-list">
+    {{#each posts}}
+    <li>
+        <article class="tips">
+            <div class="title">
+                <a href="{{dbTipsData}}" target="_blank">{{title}}</a>
+                <span>({{dbTipsData}})</span>
+            </div>
+            <div class="meta">
+                {{vote_count}} point(s) by {{user.username}} on
+                {{created_at}}
+                |
+                <a href="/tips/{{id}}">{{comments.length}} comment(s)</a>
+            </div>
+        </article>
+    </li>
+    {{/each}}
+</ol>

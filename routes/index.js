@@ -35,18 +35,20 @@ router.get('/userhome', checkAuthentication,  (req,res) => {
 router.get('/usertips', checkAuthentication,  (req,res) => {
   console.log("sending user tips page");
   // res.sendFile(path.join(__dirname, '../public/html', 'mytips.html'));
-  res.render('usertips')
+  res.render('usertips', {tips:dbTipsData});
 });
 
 router.get('/account',checkAuthentication,  (req,res) => {
   console.log("sending user account page");
   // res.sendFile(path.join(__dirname, '../public/html', 'account.html'));
-  res.render('account')
+  console.log(req.session.passport.user);
+  res.render('account',{user: req.session.passport.user})
 });
 
 router.get('/submit-tip', checkAuthentication, (req,res) => {
   console.log("sending user account page");
   res.sendFile(path.join(__dirname, '../public/html', 'submit-tip.html'));
+  res.render('submit-tip')
 });
 
 /** Routes not required to have authentication */
@@ -106,4 +108,3 @@ router.get('/logout', function(req, res, next) {
 
 
   module.exports = router;
-

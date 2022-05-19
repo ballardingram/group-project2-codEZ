@@ -72,8 +72,6 @@ app.use((req,res,next) => {
   next();
 });
 
-app.use(passport.initialize());
-app.use(passport.session());
 app.use(function(req, res, next) {
   var msgs = req.session.messages || [];
   res.locals.messages = msgs;
@@ -82,7 +80,9 @@ app.use(function(req, res, next) {
   next();
 });
 
-
+app.use(passport.initialize());
+app.use(passport.session());
+//any middleware adding from here on causng mulitple logins
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
