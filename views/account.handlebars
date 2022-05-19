@@ -5,8 +5,9 @@
       <div class="col-lg-8">
         <div class="row justify-content-between">
           <h2 class="col-lg-4">My Account</h2>
-         <form action="/api/tips/usertips/{{user.id}}" method="get" enctype="application/x-www-form-urlencoded">
-          <button type="submit" class="btn btn-block si-btn col-lg-3 mt-1 mb-1 mr-3 ml-3">View 'My Tips'</button>
+
+          <form action="/api/tips/usertips/{{user.id}}" method="get" enctype="application/x-www-form-urlencoded" class="col-lg-4">
+            <button type="submit" class="mt-btn pt-2 pb-2 mt-2 w-100">View 'My Tips'</button>
           </form>
         </div>
         <hr>

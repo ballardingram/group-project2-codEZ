@@ -107,7 +107,7 @@ router.post('/', passport.authenticate('local', {
 }) );
 
 router.post('/signup', passport.authenticate('local-signup', {
-  successReturnToOrRedirect: '/userhome',
+  successReturnToOrRedirect: '/',
   failureRedirect: '/register',
   failureMessage: true
 }) );
