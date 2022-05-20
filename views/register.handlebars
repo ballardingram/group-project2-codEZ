@@ -4,6 +4,9 @@
       <div class="col-xl-6 col-lg-8 col-md-9 col-sm-11">
         <h2>Register</h2>
         <hr>
+            {{#if messages}}
+                {{messages}} 
+            {{/if}}
         <form action="/api/auth/signup" method="post" enctype="application/x-www-form-urlencoded">
           <div class="form-outline mb-4">
             <label class="form-label" for="firstname">First Name *</label>
