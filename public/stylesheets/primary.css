@@ -1,0 +1,255 @@
+/* font-family: 'Bungee', cursive;
+font-family: 'Gruppo', cursive;
+font-family: 'Monoton', cursive;
+font-family: 'Roboto', sans-serif; */
+
+:root {
+  --primary: #152069;
+  --secondary: #3cba54;
+  --danger: #c70000;
+  --charcoal: black;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--charcoal);
+  background-color: #f6f6f6;
+}
+
+#navigation {
+  padding: 2px 16px;
+}
+
+.navbar-brand {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 600;
+  font-size: 38px;
+}
+
+.logo-1 {
+  font-weight: 500;
+}
+
+.logo-2 {
+  font-size: 22px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Header Buttons START */
+.wrappers a i {
+  color: white;
+}
+
+.wrappers {
+  font-size: 26px;
+  font-weight: bold;
+  display: inline-flex;
+}
+
+.wrappers .icon {
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  position: relative;
+}
+
+.logout {
+  padding-right: 12px;
+}
+
+.wrappers .icon {
+  margin: 0 5px;
+  cursor: pointer;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+
+.wrappers .icon span {
+  position: relative;
+  z-index: 2;
+  height: 45px;
+  width: 45px;
+  display: block;
+  background: var(--primary);
+  border-radius: 50%;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrappers .icon span i {
+  font-size: 28px;
+  line-height: 43px;
+}
+
+.wrappers .icon .tooltips {
+  position: absolute;
+  bottom: 0px;
+  background: white;
+  font-size: 16px;
+  padding: 6px 12px;
+  border-radius: 15px;
+  color: white;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrappers .icon:hover .tooltips {
+  opacity: 1;
+  pointer-events: auto;
+  bottom: -55px;
+}
+
+.wrappers .icon .tooltips:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  top: -7px;
+  right: 45%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.wrappers .icon:hover span{
+  color: white;
+}
+
+.wrappers .user:hover span,
+.wrappers .user:hover .tooltips,
+.wrappers .user:hover .tooltips:before {
+  background: var(--secondary);
+}
+
+.wrappers .home:hover span,
+.wrappers .home:hover .tooltips,
+.wrappers .home:hover .tooltips:before {
+  background: var(--secondary);
+}
+
+.wrappers .logout:hover span,
+.wrappers .logout:hover .tooltips,
+.wrappers .logout:hover .tooltips:before {
+  background: var(--secondary);
+}
+
+#search-btn {
+  color: white;
+  background-color: var(--primary);
+}
+
+#search-btn:hover {
+  color: white;
+  background-color: var(--secondary);
+}
+/* Header Buttons END */
+
+
+/* Body of Homepage START */
+#tip-form {
+  color: white;
+  background-color: var(--primary);
+  font-size: 18px;
+  border: none;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#tip-form:hover {
+  background-color: var(--secondary);
+}
+
+#filter {
+  margin-bottom: 5px;
+}
+
+.card {
+  background-color: #e2e2e2;
+}
+
+.fa-html5 {
+  color: #e34c26;
+}
+
+.fa-css3 {
+  color: #2965f1;
+}
+
+.fa-js-square {
+  color: #f0db4f;
+}
+
+.fa-node-js {
+  color: #68a063;
+}
+
+.fa-css3-alt {
+  color: #0ba8e6;
+}
+/* Body of Homepage END */
+
+
+/* Body FORM pages START */
+#form-container {
+  margin-top: 30px;
+}
+
+.si-btn {
+  color: white;
+  background-color: var(--primary);
+}
+
+.si-btn:hover {
+  color: white;
+  background-color: black;
+}
+
+.fb-btn {
+  color: white;
+  background-color: #4267b2;
+}
+
+.fb-btn:hover {
+  color: white;
+  background-color: black;
+}
+
+.gh-btn {
+  color: white;
+  background-color: #6cc644;
+}
+
+.gh-btn:hover {
+  color: white;
+  background-color: black;
+}
+
+.update-btn {
+  color: white;
+  background-color: var(--secondary);
+}
+
+.update-btn:hover {
+  color: white;
+  background-color: black;
+}
+
+.delete-btn {
+  color: white;
+  background-color: var(--danger);
+}
+
+.delete-btn:hover {
+  color: white;
+  background-color: black;
+}
+/* Body of Homepage END */

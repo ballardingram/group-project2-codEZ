@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital@0;1&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/10c0b6b763.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../assets/primary.css">
+  <link rel="stylesheet" href="../assets/login.css">
+
+  <title>{COD}EZ Login</title>
+</head>
+
+<body>
+
+  <!-- JUMBOTRON -->
+  <header class="top-nav">
+    <h1 class="logo">{COD}EZ.<span>community</span></h1>
+    <div class="menu">
+      <li><a href="./homepage.html" class="fa-solid fa-house"></a></li>
+      <li><a href="/" class="fa-solid fa-user"></a></li>
+    </div>
+  </header>
+
+  <!-- LOGIN / SIGNUP FORMS -->
+  <div class="form-data">
+
+    <div class="account">
+      <h3>Sign Up</h3>
+      <form>
+        <label for="username">Username *</label>
+        <input type="text" placeholder="Your Username Here" class="form-input">
+
+        <label for="email">Email Address *</label>
+        <input type="email" placeholder="Your Email Address" class="form-input">
+
+        <label for="password">Password *</label>
+        <input type="password" placeholder="Your Password Here" class="form-input">
+        
+        <p>
+          Note: Your username will be associated with your submissions and seen publicly.
+          <span class="checkbox-wrapper">
+            <label for="checkbox">Agree to the Terms of Service</label>
+            <input type="checkbox" id="validate" />
+          </span>
+        </p>
+        <button type="submit" class="submit">Create Account</button>
+
+        <p>or</p>
+        <button type="submit" class="icon-btn facebook"><i class="fa-brands fa-facebook"></i>    CONNECT WITH FACEBOOK</button>
+        <button type="submit" class="icon-btn github"><i class="fa-brands fa-github"></i>    CONNECT WITH GITHUB</button>
+
+      </form>
+    </div>
+    
+    <div class="account">
+      <h3>Log In</h3>
+      <form>
+        <label for="username">Username *</label>
+        <input type="text" placeholder="Your Username Here" class="form-input">
+
+        <label for="password">Password *</label>
+        <input type="password" placeholder="Your Password Here" class="form-input">
+      
+        <p>
+          <span class="checkbox-wrapper">
+            <label for="checkbox">Remember Me</label>
+            <input type="checkbox"/>
+          </span>
+        </p>
+        <button type="submit" class="submit">Login to Account</button>
+
+        <p>or</p>
+        <button type="submit" class="icon-btn facebook"><i class="fa-brands fa-facebook"></i>    LOG IN WITH FACEBOOK</button>
+        <button type="submit" class="icon-btn github"><i class="fa-brands fa-github"></i>    LOG IN WITH GITHUB</button>
+  
+        
+        
+      </form>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-policy">
+      CodEZ.community 2022 - All Rights Reserved. Powered by Team VeggieDelight | Privacy Policy | Terms of Use
+    </div>
+  </footer>
+  
+</body>
+
+</html>
