@@ -17,19 +17,23 @@
 
         <form action="/api/tips/" method="post" enctype="application/x-www-form-urlencoded">
 
-          <div class="form-outline mb-4">
-            <label class="form-label mt-2" for="tip-language">Language *</label>
-            <input type="text" id="tip-language" class="form-control" name="tip_language"/>
+          <div class="form-select mb-4">
+            <label class="form-label mt-2" for="tip-language">Please select a topic *</label>
+            <select name="tip_language" class="pt-1 pb-1 form-control pl-1" id="tip_language">
+              <option>HTML</option>
+              <option>CSS</option>
+              <option>JAVASCRIPT</option>
+            </select>         
           </div>
 
           <div class="form-outline mb-4">
             <label class="form-label mt-2" for="tip-title">Tip Title *</label>
-            <input type="text" id="tip-title" class="form-control" name="tip_title"/>
+            <input type="text" id="tip-title" class="form-control" name="tip_title" required/>
           </div>
 
           <div class="form-outline">
             <label class="form-label mt-2" for="tip-details">Tip Details *</label>
-            <textarea name="tip_detail" id="tip-details" class="form-control" rows="6"></textarea>
+            <textarea name="tip_detail" id="tip-details" class="form-control" rows="6" required></textarea>
           </div>
         
 

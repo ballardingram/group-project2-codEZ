@@ -61,14 +61,18 @@
 
         <form action="/api/auth" method="post" enctype="application/x-www-form-urlencoded">
 
-          <div class="form-outline mb-4">
-            <label class="form-label mt-2" for="tip-language">Language *</label>
-            <input type="text" id="tip-language" class="form-control" />
+          <div class="form-select mb-4">
+            <label class="form-label mt-2" for="tip-language">Please select a topic *</label>
+            <select name="tip_language" class="pt-1 pb-1 form-control pl-1" id="tip_language">
+              <option>HTML</option>
+              <option>CSS</option>
+              <option>JAVASCRIPT</option>
+            </select>         
           </div>
 
           <div class="form-outline mb-4">
             <label class="form-label mt-2" for="tip-title">Tip Title *</label>
-            <input type="text" id="tip-title" class="form-control" />
+            <input type="text" id="tip-title" class="form-control"/>
           </div>
 
           <div class="form-outline">
