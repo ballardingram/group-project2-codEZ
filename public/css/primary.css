@@ -36,6 +36,16 @@ body {
   font-style: italic;
 }
 
+.mobile-nav {
+  width: 100%;
+}
+
+.mobile-nav a {
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 /* Header Buttons START */
 .wrappers a i {
   color: white;
@@ -176,29 +186,10 @@ body {
   background-color: #e2e2e2;
 }
 
-.fa-html5 {
-  color: #e34c26;
-}
-
-.fa-css3 {
-  color: #2965f1;
-}
-
-.fa-js-square {
-  color: #f0db4f;
-}
-
-.fa-node-js {
-  color: #68a063;
-}
-
-.fa-css3-alt {
-  color: #0ba8e6;
-}
 /* Body of Homepage END */
 
 
-/* Body FORM pages START */
+/* Body forms START */
 #form-container {
   margin-top: 30px;
 }
@@ -262,4 +253,21 @@ body {
   color: white;
   background-color: black;
 }
-/* Body of Homepage END */
+
+#return-btn {
+  font-size: 16px;
+  background-color: var(--primary);
+  color: white;
+}
+
+#return-btn:hover {
+  background-color: var(--charcoal);
+}
+/* Body forms END */
+
+
+@media screen and (max-width: 767px) {
+  #tip-form {
+    margin-top: 10px;
+  }
+}

@@ -53,12 +53,15 @@ app.use(session({
       }
   }),
 );
-app.use((req,res,next) => { 
-  res.locals.session = req.session;
-  next();
-});
+// app.use((req,res,next) => { 
+//   res.locals.session = req.session;
+//   next();
+// });
 
-app.use(function(req, res, next) {
+
+app.use(passport.initialize());
+app.use(passport.session());
+app.use((req, res, next) => {
   var msgs = req.session.messages || [];
   res.locals.messages = msgs;
   res.locals.hasMessages = !! msgs.length;
@@ -66,8 +69,6 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use(passport.initialize());
-app.use(passport.session());
 //any middleware adding from here on causng mulitple logins
 app.use(routes);
 

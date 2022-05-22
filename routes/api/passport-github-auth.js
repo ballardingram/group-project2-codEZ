@@ -3,6 +3,7 @@ const Strategy = require('passport-github2')
 const router = require('express').Router();
 const { User } = require('../../models');
 const path = require('path');
+const errorParser = require('../../utils/errorparser');
 
 passport.use(new Strategy({
     clientID: process.env['GH_CLIENT_ID'],
@@ -33,7 +34,7 @@ passport.use(new Strategy({
           })
             .catch(err => {
               console.log(err);
-              return cb(null, false, { message: 'internal db error while creating federate user: ' + err });
+              return cb(null, false, { message: errorParser(err) });
             });
         }else{
         console.log('DB uesr data is '+JSON.stringify(dbUserData));
@@ -43,32 +44,15 @@ passport.use(new Strategy({
           return cb(null, dbUserData);
         } else {
           console.log('user found with email but provider not matching');
-          return cb(null, false, { message: 'EMAIL_EXISTS_WITH_DIFFERENT_PROVIDER' });
+          return cb(null, false, { message: 'Email ID already existed with other account' });
         }
       }
       }
       ).catch(err => {
-        return cb(null, false, { message: 'internal db error while : ' + err });
+        return cb(null, false, { message: errorParser(err) });
       });
   }
 ));
-
-// passport.serializeUser(function (profile, done) {
-//     console.log('we came to store a gh session : '+JSON.stringify(profile));
-//     process.nextTick(function() {
-//         done(null, profile);
-//     });
-//   });
-  
-  
-//   passport.deserializeUser(function (profile, done) {
-//     console.log('we came to retrieve a gh session : ');
-//     console.log(JSON.stringify(profile));
-//         process.nextTick(function() {
-//           done(null, profile);
-//         });
-//   });
-
   
 router.get('/github',
   passport.authenticate('github', { scope: [ 'user:email' ] }));

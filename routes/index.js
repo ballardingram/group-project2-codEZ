@@ -54,13 +54,15 @@ router.get('/submit-tip', checkAuthentication, (req,res) => {
 
 router.get('/privacy-policy',  (req,res) => {
   console.log("sending user account page");
-  res.sendFile(path.join(__dirname, '../public/html', 'privacy-policy.html'));
+  // res.sendFile(path.join(__dirname, '../public/html', 'privacy-policy.html'));
+  res.render('privacy');
 });
 
 
 router.get('/terms-of-service',  (req,res) => {
   console.log("sending user account page");
-  res.sendFile(path.join(__dirname, '../public/html', 'terms-of-service.html'));
+  // res.sendFile(path.join(__dirname, '../public/html', 'terms-of-service.html'));
+  res.render('terms-of-service');
 });
 
 router.get('/register',(req,res) => {
