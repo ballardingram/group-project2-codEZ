@@ -14,10 +14,10 @@
     {{#if tip}}
          
             <div class="col-sm-11">
-                <div class="card mb-3">
+                <div class="card mb-3 shadow">
                     <h5 class="card-header"><i class="fa-solid fa-code-branch"></i> {{tip.tip_language}}</h5>
                     <div class="card-body">
-                        <h5 class="card-title">{{tip.tip_title}}</h5>
+                        <h5 class="card-subtitle text-muted">{{tip.tip_title}}</h5>
                         <p class="card-text">{{tip.tip_detail}}
                         </p>
                     </div>
@@ -27,8 +27,8 @@
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col-sm-11">
-                        <a href="/" type="button" class="btn">
-                            Back to homepage
+                        <a href="/" type="button" class="btn" id="return-btn">
+                            Return to homepage
                         </a>
                     </div>
                 </div>
