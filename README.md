@@ -114,17 +114,36 @@ This challenge presented a few opportunities for us, but we dove in headfirst an
 # <a name="Application-Demo"> Application Demo </a>
 You can [CLICK HERE](https://youtu.be/mkDBSmsjCqE) to view a Video Demo of our application.
 
-### Title
-![]()
+### Homepage
+![Homepage](https://github.com/ballardingram/group-project2-codEZ/blob/main/public/media/readme01-homepage.jpg?raw=true)
 
-### Title
-![]()
+> A - Homepage Button  
+> B - Login / My Account Button  
+> C - Logout Button  
+> D - Language Title  
+> E - Language Details and View More Link
 
-### Title
-![]()
+### Sign In
+![Sign In](https://github.com/ballardingram/group-project2-codEZ/blob/main/public/media/readme02-login.jpg?raw=true)
 
-### Title
-![]()
+> A - Standard User Sign In Button  
+> B - Sign In with Facebook Option  
+> C - Sign In with GitHub Option  
+> D - Register Link for New Users  
+
+### Register
+![Register](https://github.com/ballardingram/group-project2-codEZ/blob/main/public/media/readme03%20-%20register.jpg?raw=true)
+
+> A - Register Form  
+> B - Create New User Button  
+
+### My Account
+![My Account](https://github.com/ballardingram/group-project2-codEZ/blob/main/public/media/readme04%20-%20my%20account.jpg?raw=true)
+
+> A - Personal Information  
+> B - Update Account Button  
+> C - Delete Account Button  
+> D - My Tips  
 
 ---
 
