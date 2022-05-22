@@ -17,10 +17,19 @@
                 <div class="card mb-3">
                     <h5 class="card-header"><i class="fa-solid fa-code-branch"></i> {{tip.tip_language}}</h5>
                     <div class="card-body">
-                        <h5 class="card-title"><a href="/api/tips/{{tip.id}}"> {{tip.tip_title}}</a></a></h5>
+                        <h5 class="card-title">{{tip.tip_title}}</h5>
                         <p class="card-text">{{tip.tip_detail}}
                         </p>
-                        <a href="/api/tips/{{this.id}}"> View More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-sm-11">
+                        <a href="/" type="button" class="btn">
+                            Back to homepage
+                        </a>
                     </div>
                 </div>
             </div>
