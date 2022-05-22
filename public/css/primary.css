@@ -36,6 +36,16 @@ body {
   font-style: italic;
 }
 
+.mobile-nav {
+  width: 100%;
+}
+
+.mobile-nav a {
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 /* Header Buttons START */
 .wrappers a i {
   color: white;
@@ -263,3 +273,10 @@ body {
   background-color: black;
 }
 /* Body of Homepage END */
+
+
+@media screen and (max-width: 767px) {
+  #tip-form {
+    margin-top: 10px;
+  }
+}
