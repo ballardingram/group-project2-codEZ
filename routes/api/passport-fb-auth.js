@@ -3,7 +3,7 @@ const Strategy = require('passport-facebook')
 const router = require('express').Router();
 const { User } = require('../../models');
 const path = require('path');
-
+const errorParser = require('../../utils/errorparser');
 
 
 const fbStrategy = new Strategy({
@@ -38,7 +38,7 @@ const fbStrategy = new Strategy({
         })
           .catch(err => {
             console.log(err);
-            return cb(null, false, { message: 'internal db error while creating federate user: ' + err });
+            return cb(null, false, { message: errorParser(err) });
           });
       }else{
       console.log('DB uesr data is '+JSON.stringify(dbUserData));
@@ -48,34 +48,17 @@ const fbStrategy = new Strategy({
         return cb(null, dbUserData);
       } else {
         console.log('user found with email but provider not matching');
-        return cb(null, false, { message: 'EMAIL_EXISTS_WITH_DIFFERENT_PROVIDER' });
+        return cb(null, false, { message: 'Email ID already existed with other account created through '+dbUserData['provider'] });
       }
     }
     }
     ).catch(err => {
-      return cb(null, false, { message: 'internal db error while : ' + err });
+      return cb(null, false, { message: errorParser(err) });
     });
   });
 
 
 passport.use('facebook',fbStrategy);
-
-// passport.serializeUser(function (profile, done) {
-//   console.log('we came to store a fb session : '+JSON.stringify(profile));
-//   process.nextTick(function() {
-//       done(null, profile);
-//   });
-// });
-
-
-// passport.deserializeUser(function (profile, done) {
-//   console.log('we came to retrieve a fb session : ');
-//   console.log(JSON.stringify(profile));
-//       process.nextTick(function() {
-//         done(null, profile);
-//       });
-// });
-
 
 
 router.get('/loginfacebook', passport.authenticate('facebook', { scope: ['public_profile', 'email'] }));

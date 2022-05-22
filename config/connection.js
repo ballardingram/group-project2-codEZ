@@ -9,7 +9,7 @@ const sequelize = JWSDB_URL?
                         process.env.DB_USER,
                         process.env.DB_PW,
                         {
-                            host: 'localhost',
+                            host: process.env.HOST_NAME,
                             dialect: 'mysql',
                             storage: "./session.mysql",
                         }
